@@ -1,4 +1,9 @@
-MIT License
+#+title: MIT License
+#+author: mcpeapsUnterstrichHD
+#+description: MIT License
+#+startup: showeverything
+#+options: toc:2
+* MIT License
 
 Copyright (c) 2025 comboom.sucht
 
