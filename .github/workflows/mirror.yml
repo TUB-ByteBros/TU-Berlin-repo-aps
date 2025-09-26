@@ -1,0 +1,32 @@
+name: Mirror to GitLab
+
+on:
+  push:
+    branches:
+      - "**"   # Triggert bei jedem Branch
+    tags:
+      - "*"    # Triggert auch bei jedem Tag
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # wichtig, damit auch alle Branches & Tags geholt werden
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.GITLAB_SSH_KEY }}
+
+      - name: Add GitLab remote
+        run: |
+          git remote add gitlab ${{ secrets.GITLAB_REPO }}
+          git fetch --all
+
+      - name: Push all branches and tags to GitLab
+        run: |
+          git push --all gitlab --force
+          git push --tags gitlab --force
