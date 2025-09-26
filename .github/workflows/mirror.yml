@@ -28,7 +28,7 @@ jobs:
 
       - name: Add GitLab remote
         run: |
-          git remote add gitlab git@gitlab.com:${{ secrets.GITLAB_USERNAME }}/$(basename $GITHUB_REPOSITORY).git
+          git remote add gitlab git@git.tu-berlin.de:${{ secrets.GITLAB_USERNAME }}/$(basename $GITHUB_REPOSITORY).git
           git fetch --all
 
       - name: Push all branches & tags
