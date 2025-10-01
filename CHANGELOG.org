@@ -6,15 +6,25 @@
 
 * Table of Contents :toc:
 - [[#2025-10-01---update-base][2025-10-01 - Update Base]]
+  - [[#added][Added:]]
+  - [[#changed][Changed:]]
+- [[#2025-10-01---update-base-2][2025-10-01 - Update Base 2]]
+  - [[#changed-1][Changed:]]
 
 * 2025-10-01 - Update Base
 
-Added:
+** Added:
 - Changelog
 - Contributing
 
-Changed:
+** Changed:
 - License
   Changes in the author-header to add e-mail address
 - Readme
   Changes in the author-header to add e-mail address
+
+* 2025-10-01 - Update Base 2
+
+** Changed:
+- Changelog
+  better formatting
