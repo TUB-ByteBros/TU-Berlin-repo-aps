@@ -1,0 +1,17 @@
+#+title: Contributing
+#+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
+#+description:https://mcpeapsunterstrichhd.dev/linkhub
+#+startup: showeverything
+#+options: toc:2
+
+
+* Table of Contents :toc:
+- [[#main-editor][Main Editor]]
+- [[#secondary-editor][Secondary Editor]]
+
+* Main Editor
+
+- mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
+- mahd<fabian.aps@campus.tu-berlin.de>
+
+* Secondary Editor

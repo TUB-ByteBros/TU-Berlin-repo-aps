@@ -1,5 +1,5 @@
 #+title: TU-Berlin-repo-aps
-#+author: mcpeapsUnterstrichHD
+#+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
 #+description:https://mcpeapsunterstrichhd.dev/linkhub
 #+startup: showeverything
 #+options: toc:2

@@ -1,0 +1,20 @@
+#+title: Changelog
+#+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
+#+description:https://mcpeapsunterstrichhd.dev/linkhub
+#+startup: showeverything
+#+options: toc:2
+
+* Table of Contents :toc:
+- [[#2025-10-01---update-base][2025-10-01 - Update Base]]
+
+* 2025-10-01 - Update Base
+
+Added:
+- Changelog
+- Contributing
+
+Changed:
+- License
+  Changes in the author-header to add e-mail address
+- Readme
+  Changes in the author-header to add e-mail address

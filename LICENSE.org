@@ -1,5 +1,5 @@
 #+title: MIT License
-#+author: mcpeapsUnterstrichHD
+#+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
 #+description: MIT License
 #+startup: showeverything
 #+options: toc:2
