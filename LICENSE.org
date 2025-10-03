@@ -3,7 +3,6 @@
 #+description: MIT License
 #+startup: showeverything
 #+options: toc:2
-* MIT License
 
 Copyright (c) 2025 comboom.sucht
 

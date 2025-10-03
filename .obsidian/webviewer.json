@@ -1,0 +1,7 @@
+{
+  "openExternalURLs": true,
+  "enableAdblocking": true,
+  "customSearchEngine": "https://search.localhost/search?q=%s",
+  "searchEngine": "custom",
+  "homepage": "https://dasboard.localhost"
+}
