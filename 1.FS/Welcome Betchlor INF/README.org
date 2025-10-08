@@ -1,0 +1,20 @@
+#+title: Einfürung in den Betchlor Informatik
+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
+#+description:https://mcpeapsunterstrichhd.dev/linkhub
+#+startup: showeverything
+#+options: toc:2
+
+* Table of Contents :toc:
+- [[#kernkompetenzen][Kernkompetenzen]]
+
+* Kernkompetenzen
+- Analyse
+- Abstraktion
+- Beschreibung
+
+- Lösungsfindung
+- Kreativitat
+- Umsetzung
+
+- Komunikation
+- Teamfähigkeit
