@@ -1,4 +1,4 @@
-#+title: Einfürung in den Betchlor Informatik
+#+title: Einfürung in den Batchlore Informatik
 author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
 #+description:https://mcpeapsunterstrichhd.dev/linkhub
 #+startup: showeverything
@@ -6,6 +6,7 @@ author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
 
 * Table of Contents :toc:
 - [[#kernkompetenzen][Kernkompetenzen]]
+- [[#was-ist-informatik][Was Ist Informatik]]
 
 * Kernkompetenzen
 - Analyse
@@ -18,3 +19,7 @@ author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
 
 - Komunikation
 - Teamfähigkeit
+
+* Was Ist Informatik
+- Computer Sience
+-
