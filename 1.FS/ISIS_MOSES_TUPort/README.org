@@ -1,0 +1,29 @@
+#+title:  ISIS MOSES TUPort?
+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
+#+description:https://mcpeapsunterstrichhd.dev/linkhub
+#+startup: showeverything
+#+options: toc:2
+
+
+* Table of Contents :toc:
+- [[#isis][ISIS]]
+- [[#moses][Moses]]
+- [[#tuport][TUPort]]
+  - [[#qispos][QISPOS]]
+
+* ISIS
+- Kurs übersicht
+- Informationen zu Kursen
+- Klausur als online möglicht
+
+* Moses
+- Informationen zu Kursen
+- Püfungsanmeldung
+
+
+* TUPort
+- Verwaltung von TU-Account
+
+** QISPOS
+ - Prüfungsnoten
+ - ab-/Anmelden möglich
