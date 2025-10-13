@@ -1,6 +1,9 @@
-[submodule "1.FS/C-Programming/Default/thirdparty/flag.h"]
-	path = 1.FS/C-Programming/Default/thirdparty/flag.h
+[submodule "1 .FS/C-Programming/Default/thirdparty/flag.h"]
+	path = "1. FS/C-Programming/Default/thirdparty/flag.h"
 	url = https://github.com/tsoding/flag.h.git
-[submodule "1.FS/C-Programming/Default/thirdparty/nob.h"]
-	path = 1.FS/C-Programming/Default/thirdparty/nob.h
+[submodule "1. FS/C-Programming/Default/thirdparty/nob.h"]
+	path = 1. FS/C-Programming/Default/thirdparty/nob.h
 	url = https://github.com/tsoding/nob.h.git
+[submodule "1. FS/C-Programming/Default/thirdparty/flag.h"]
+	path = 1. FS/C-Programming/Default/thirdparty/flag.h
+	url = https://github.com/tsoding/flag.h.git
