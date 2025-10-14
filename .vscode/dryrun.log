@@ -1,0 +1,6 @@
+make all --dry-run --keep-going --print-directory
+make: Entering directory `/Users/mahd/DEV/TU-Berlin-repo-aps'
+make: Leaving directory `/Users/mahd/DEV/TU-Berlin-repo-aps'
+ 
+make: *** No rule to make target `all'.
+

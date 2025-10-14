@@ -1,0 +1,30 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "lldb",
+				"request": "launch",
+				"name": "build and run main ",
+				"program": "${workspaceFolder}/WiSe2025-26/C-Programming/Default/nob",
+				"args": ["-r"],
+				"cwd": "${workspaceFolder}/WiSe2025-26/C-Programming/Default/"
+			},
+			{
+				"type": "lldb",
+				"request": "launch",
+				"name": "Run main",
+				"program": "${workspaceFolder}/WiSe2025-26/C-Programming/Default/build/main",
+				"args": [],
+				"cwd": "${workspaceFolder}/WiSe2025-26/C-Programming/Default/"
+			}
+
+		]
+	}
+}

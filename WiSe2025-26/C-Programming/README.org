@@ -1,1 +1,11 @@
-#+title: Readme
+#+title: ALL my C-Programms
+#+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
+#+description:https://mcpeapsunterstrichhd.dev/linkhub
+#+startup: showeverything
+#+options: toc:2
+
+  * Table of Content :toc:
+  - [[#default][Default]]
+
+  * Default
+    This is a simple Hello World programm in C using nob.h to build and run the program.
