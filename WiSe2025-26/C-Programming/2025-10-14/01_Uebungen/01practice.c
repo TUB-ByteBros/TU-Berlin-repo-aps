@@ -28,7 +28,11 @@ int bakery(int cupcake, int pie, int cake) {
     vielen Torten zu.
     */
     /* BEGIN CHANGES */
-
+    result = (2 * cupcake) + (3 * pie) + (4 * cake);
+    if (cupcake + pie + cake >= 8) {
+        result *= 0.8;
+    }
+    result = (int) result;
     /* END CHANGES */
     return result;
 }
@@ -47,7 +51,9 @@ int seconds_to_units(int input_seconds) {
     Variable `seconds` die verbleibenden Sekunden zu.
     */
     /* BEGIN CHANGES */
-
+    hours = input_seconds / 3600;
+    minutes = (input_seconds % 3600) / 60;
+    seconds = input_seconds % 60;
     /* END CHANGES */
     return seconds + 256 * minutes + 256 * 256 * hours;
 }
@@ -62,7 +68,12 @@ int is_square_root(int n) {
     Weisen Sie der Variable `result` den Wert `1` zu, falls `n` eine Quadratzahl ist, und ansonsten `0`.
     */
     /* BEGIN CHANGES */
-
+    for (int i = 0; i * i <= n; i++) {
+        if (i * i == n) {
+            result = 1;
+            break;
+        }
+    }
     /* END CHANGES */
     return result;
 }
@@ -75,7 +86,10 @@ int digit_sum(int n) {
     Weisen Sie der Variable `result` die Quersumme von `n` zu.
     */
     /* BEGIN CHANGES */
-
+    while (n > 0) {
+        result += + (n % 10);
+        n = n / 10;
+    }
     /* END CHANGES */
     return result;
 }
@@ -89,7 +103,10 @@ int reverse_digits(int n) {
     Weisen Sie der Variable `result` die Spiegelung von `n` zu.
     */
     /* BEGIN CHANGES */
-
+    while (n > 0) {
+        result = result * 10 + (n % 10);
+        n = n / 10;
+    }
     /* END GURKENSALAT */
     return result;
 }
