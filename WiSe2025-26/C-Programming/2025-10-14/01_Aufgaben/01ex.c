@@ -36,7 +36,7 @@ int simple_assignment(int a, int b) {
     die Codezeile `result = a + b;` zwischen diesen beiden Kommentaren einfügen, speichern, und dann weiterlesen.
     */
     /* BEGIN CHANGES */
-    result = a + b;
+    result = a * b;
     /* END CHANGES */
     /*
     Die Codezeile, die Sie eingefügt haben, weist der Variable `result` die Summe der beiden Variablen `a` und `b` zu.
@@ -93,6 +93,10 @@ int rotation(int a, int b, int c) {
     die Belegung `a = 3, b = 7, c = 0` sein.
     */
     /* BEGIN CHANGES */
+    int temp = a;
+    a = b;
+    b = c;
+    c = temp;
 
     /* END CHANGES */
     return a + (b * 256) + (c * 256 * 256); /* Ja, diese Zeile mag überraschend sein. Einfach ignorieren :-) */
