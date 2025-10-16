@@ -25,7 +25,8 @@ hätte es sich für Sie gelohnt, sie selbst zu definieren.
 Teilprobleme zu identifizieren und losgelöst vom ursprünglichen Kontext als Hilfsfunktion zu implementierem ist
 ein großer Teil von kompetentem Programmieren.
 */
-int is_multiple_of(int n, int k) {
+int is_multiple_of(int n, int k)
+{
     int remainder = n % k;
     return remainder == 0;
 }
@@ -35,14 +36,9 @@ Aufgabe 1a:
 
 Geben Sie in dieser Funktion die Summe der ersten `n` natürlichen Zahlen (exklusive der Null) zurück, die durch `m` teilbar sind.
 */
-int sum_of_divisibles(int n, int m) {
-    int sum = 0;
-    for (int i = 1; i < n; i++) {
-        if (is_multiple_of(i, m)) {
-            sum += i;
-        }
-    }
-    return sum;
+int sum_of_divisibles(int n, int m)
+{
+    return 0;
 }
 
 /*
@@ -50,14 +46,9 @@ Aufgabe 1b:
 
 Geben Sie in dieser Funktion die Summe der ersten `n` natürlichen Zahlen (exklusive der Null) zurück, die durch `l` und durch `m` teilbar sind.
 */
-int sum_of_doubly_divisibles(int n, int l, int m) {
-    int sum = 0;
-    for (int i = 1; i < n; i++) {
-        if (is_multiple_of(i, l) && is_multiple_of(i, m)) {
-            sum += i;
-        }
-    }
-    return sum;
+int sum_of_doubly_divisibles(int n, int l, int m)
+{
+    return 0;
 }
 
 /*
@@ -69,7 +60,8 @@ Die Canvas ist ein zweidimensionales Raster aus Pixeln, ein einfaches, mit Code 
 Dank der bereitgestellten Funktionen brauchen Sie nicht verstehen, wie der Computer Bilder repräsentiert. Sie müssen nur wissen,
 wie Sie die Funktion `canvas_set_black` aufrufen, um die Canvas zu manipulieren.
 */
-Canvas first_canvas_exercise(Canvas c) {
+Canvas first_canvas_exercise(Canvas c)
+{
     /*
     Die `canvas_set_black` Funktion bekommt drei Parameter. Eine Canvas, sowie eine
     x-Koordinate und eine y-Koordinate innerhalb dieser Canvas.
@@ -119,14 +111,8 @@ Funktionen übergeben Sie eine Canvas (so: `canvas_width(c)` und `canvas_height(
 die Breite und Höhe zurückgegeben.
 Hinweis: Koordinaten beginnen bei `0`, nicht bei `1`.
 */
-Canvas color_corners(Canvas c) {
-    int width = canvas_width(c);
-    int height = canvas_height(c);
-
-    canvas_set_black(c, 0, 0);
-    canvas_set_black(c, width - 1, 0);
-    canvas_set_black(c, 0, height - 1);
-    canvas_set_black(c, width - 1, height - 1);
+Canvas color_corners(Canvas c)
+{
     return c;
 }
 
@@ -134,14 +120,8 @@ Canvas color_corners(Canvas c) {
 Aufgabe 2c:
 Färben Sie alle Pixel der Canvas schwarz.
 */
-Canvas paint_it_black(Canvas c) {
-    int width = canvas_width(c);
-    int height = canvas_height(c);
-    for (int y = 0; y < height; y++) {
-        for (int x = 0; x < width; x++) {
-            canvas_set_black(c, x, y);
-        }
-    }
+Canvas paint_it_black(Canvas c)
+{
     return c;
 }
 
@@ -152,15 +132,8 @@ ersten drei der dritten Reihe und so weiter (falls das unklar war, führen Sie e
 und schauen sich das erwartete Ergebnis an).
 Falls eine Reihe nicht breit genug ist, färben Sie alle Pixel dieser Reihe schwarz.
 */
-Canvas descending_diagonal(Canvas c) {
-    int width = canvas_width(c);
-    int height = canvas_height(c);
-    for (int y = 0; y < height; y++) {
-    {
-        for (int x = 0; x <= y && x < width; x++) {
-            canvas_set_black(c, x, y);
-        }
-    }
+Canvas descending_diagonal(Canvas c)
+{
     return c;
 }
 
@@ -170,12 +143,8 @@ Diese Funktion soll ein gefülltes schwarzes Rechteck auf die Canvas zeichnen. D
 Koordinaten `(x, y)`. Die Breite des Rechtecks ist `width`, und die Höhe ist `height`. Falls das Rechteck nicht
 auf die Canvas passt, sollen einfach die Teile ignoriert werden welche außerhalb liegen würden.
 */
-Canvas draw_rectangle(Canvas c, int x, int y, int width, int height) {
-    for (int dy = 0; dy < height; dy++) {
-        for (int dx = 0; dx < width; dx++) {
-            canvas_set_black(c, x + dx, y + dy);
-        }
-    }
+Canvas draw_rectangle(Canvas c, int x, int y, int width, int height)
+{
     return c;
 }
 
@@ -188,11 +157,7 @@ Falls das Rechteck nicht auf die Canvas passt, sollen einfach die Teile ignorier
 Tipp: Ob Sie diese Funktion von Grund auf implementieren oder `draw_rectangle` von Aufgabe 3a nutzen ist Ihnen überlassen.
 Wir empfehlen beides auszuprobieren und selbst zu entscheiden welche Lösung Sie eleganter finden.
 */
-Canvas draw_rectangle_via_corners(Canvas c, int x0, int y0, int x1, int y1) {
-    for (int y = y0; y < y1; y++) {
-        for (int x = x0; x < x1; x++) {
-            canvas_set_black(c, x, y);
-        }
-    }
+Canvas draw_rectangle_via_corners(Canvas c, int x0, int y0, int x1, int y1)
+{
     return c;
 }
