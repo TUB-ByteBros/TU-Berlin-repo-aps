@@ -4,8 +4,24 @@
 #+startup: showeverything
 #+options: toc:2
 
-  * Table of Content :toc:
+⊙ Table of Content :toc:
   - [[#default][Default]]
+  - [[#2025-10-13][2025-10-13]]
+  - [[#2025-10-14][2025-10-14]]
+  - [[#2025-10-15][2025-10-15]]
+  - [[#2025-10-16][2025-10-16]]
 
-  * Default
-    This is a simple Hello World programm in C using nob.h to build and run the program.
+⊙ Default
+  This is a simple Hello World programm in C using nob.h to build and run the program.
+
+⊙ 2025-10-13
+  This was the first lesson for the fundamentals
+
+⊙ 2025-10-14
+  the second lesson with more fundamentals and the first group of exercises and practicing tasks
+
+⊙ 2025-10-15
+  the third lesson with more fundamentals and the first group of exercises and practicing tasks
+
+⊙ 2025-10-16
+  the fourth lesson with more fundamentals and the third group of exercises and practicing tasks
