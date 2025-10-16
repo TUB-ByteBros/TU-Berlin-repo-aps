@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #define NOB_STRIP_PREFIX
 #define NOB_IMPLEMENTATION
-#include "thirdparty/nob.h/nob.h"
+#include "nob.h"
 #define FLAG_IMPLEMENTATION
-#include "thirdparty/flag.h/flag.h"
+#include "flag.h"
 
 typedef struct {
   char **items;

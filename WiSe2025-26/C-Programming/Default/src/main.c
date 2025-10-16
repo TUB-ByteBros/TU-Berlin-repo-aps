@@ -1,5 +1,5 @@
 #define NOB_IMPLEMENTATION
-#include "../thirdparty/nob.h/nob.h"
+#include "../nob.h"
 
 int main(int argc, char **argv) {
   NOB_UNUSED(argc);
