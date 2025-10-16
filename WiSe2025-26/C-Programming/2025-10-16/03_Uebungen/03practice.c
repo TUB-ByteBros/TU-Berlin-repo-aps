@@ -11,13 +11,14 @@ Auf diesem Blatt geht es unter anderem um:
 - Die Canvas
 */
 
-#include <stdio.h>
 #include "03_canvas.h"
+#include <stdio.h>
 
 /*
 Geben Sie '1' zurück falls 'x' gerade ist, und '0' falls 'x' ungerade ist.
 */
-int is_even(int x) {
+int is_even(int x)
+{
     return x % 2 == 0;
 }
 
@@ -25,7 +26,8 @@ int is_even(int x) {
 Geben Sie '1' zurück falls 'x' ungerade ist, und '0' falls 'x' gerade ist.
 Die Ziffer '2' soll nicht direkt in Ihrer Lösung vorkommen. Nutzen Sie stattdessen 'is_even'.
 */
-int is_odd(int x) {
+int is_odd(int x)
+{
     return !is_even(x);
 }
 
@@ -43,14 +45,16 @@ Erstellen Sie folgende Zeichnung auf der Canvas:
 
 Nutzen Sie am besten eine Schleife für die Mundlinie.
 */
-Canvas draw_smiley(Canvas c) {
+Canvas draw_smiley(Canvas c)
+{
     canvas_set_black(c, 1, 4);
     canvas_set_black(c, 7, 4);
 
     canvas_set_black(c, 1, 2);
     canvas_set_black(c, 7, 2);
 
-    for (int x = 2; x <= 6; x++) {
+    for (int x = 2; x <= 6; x++)
+    {
         canvas_set_black(c, x, 1);
     }
     return c;
@@ -59,10 +63,14 @@ Canvas draw_smiley(Canvas c) {
 /*
 Zeichnen Sie ein klassisches Schachbrettmuster, startend bei (0,0) mit Schwarz
 */
-Canvas draw_chessboard(Canvas c) {
-    for (int y = 0; y < canvas_height(c); y++) {
-        for (int x = 0; x < canvas_width(c); x++) {
-            if ((x + y) % 2 == 0) {
+Canvas draw_chessboard(Canvas c)
+{
+    for (int y = 0; y < canvas_height(c); y++)
+    {
+        for (int x = 0; x < canvas_width(c); x++)
+        {
+            if ((x + y) % 2 == 0)
+            {
                 canvas_set_black(c, x, y);
             }
         }
@@ -75,19 +83,23 @@ Diese Funktion soll gefüllte Stufen zeichnen, welche von unten links anfangend 
 Jede Stufe soll eine Breite von `step_width` haben und eine Höhe von `step_height` (beide sind immer größer als null).
 Für mehr Details schauen Sie einfach in das Test-Feedback für den ersten Testfall.
 */
-Canvas i_told_you_about_stairs(Canvas c, int step_width, int step_height) {
+Canvas i_told_you_about_stairs(Canvas c, int step_width, int step_height)
+{
     int c_width = canvas_width(c);
     int c_height = canvas_height(c);
 
-    for (int step = 0; step * step_width < c_width && step * step_height < c_height; step++) {
-        int start_x = step * step_width;
-        int start_y = step * step_height;
+    for (int x = 0; x < c_width; x++)
+    {
+        // Bestimme, in welcher Stufe wir uns befinden
+        int step = x / step_width;
+        int max_y = (step + 1) * step_height;
+        if (max_y > c_height)
+            max_y = c_height;
 
-        // Fill the current step rectangle
-        for (int y = start_y; y < start_y + step_height && y < c_height; y++) {
-            for (int x = start_x; x < start_x + step_width && x < c_width; x++) {
-                c = canvas_set_black(c, x, y);
-            }
+        // Färbe alle Pixel unterhalb der aktuellen Stufe
+        for (int y = 0; y < max_y; y++)
+        {
+            c = canvas_set_black(c, x, y);
         }
     }
 

@@ -27,8 +27,8 @@ ein großer Teil von kompetentem Programmieren.
 */
 int is_multiple_of(int n, int k)
 {
-    int remainder = n % k;
-    return remainder == 0;
+  int remainder = n % k;
+  return remainder == 0;
 }
 
 /*
@@ -38,7 +38,19 @@ Geben Sie in dieser Funktion die Summe der ersten `n` natürlichen Zahlen (exklu
 */
 int sum_of_divisibles(int n, int m)
 {
-    return 0;
+  int sum = 0;
+  int count = 0;
+
+  // i läuft, bis wir n passende Zahlen gefunden haben
+  for (int i = 1; count < n; i++)
+  {
+    if (is_multiple_of(i, m))
+    {
+      sum += i;
+      count++;
+    }
+  }
+  return sum;
 }
 
 /*
@@ -48,7 +60,26 @@ Geben Sie in dieser Funktion die Summe der ersten `n` natürlichen Zahlen (exklu
 */
 int sum_of_doubly_divisibles(int n, int l, int m)
 {
-    return 0;
+  int sum = 0;
+
+  // Das kleinste gemeinsame Vielfache (kgV) von l und m
+  int step;
+  for (int i = 1; i <= l * m; i++)
+  {
+    if (i % l == 0 && i % m == 0)
+    {
+      step = i;
+      break;
+    }
+  }
+
+  // Jetzt die ersten n Zahlen aufsummieren, die Vielfache von step sind
+  for (int i = 1; i <= n; i++)
+  {
+    sum += i * step;
+  }
+
+  return sum;
 }
 
 /*
@@ -62,44 +93,44 @@ wie Sie die Funktion `canvas_set_black` aufrufen, um die Canvas zu manipulieren.
 */
 Canvas first_canvas_exercise(Canvas c)
 {
-    /*
-    Die `canvas_set_black` Funktion bekommt drei Parameter. Eine Canvas, sowie eine
-    x-Koordinate und eine y-Koordinate innerhalb dieser Canvas.
-    Die linke untere Ecke der Canvas ist der Koordinatenursprung, dort sind die x- und die y-Koordinate jeweils `0`.
-    Nach rechts steigen die x-Koordinaten, nach oben die y-Koordinaten.
-    */
-    c = canvas_set_black(c, 0, 5);
-    c = canvas_set_black(c, 2, 0);
-    c = canvas_set_black(c, 12, 1);
+  /*
+  Die `canvas_set_black` Funktion bekommt drei Parameter. Eine Canvas, sowie eine
+  x-Koordinate und eine y-Koordinate innerhalb dieser Canvas.
+  Die linke untere Ecke der Canvas ist der Koordinatenursprung, dort sind die x- und die y-Koordinate jeweils `0`.
+  Nach rechts steigen die x-Koordinaten, nach oben die y-Koordinaten.
+  */
+  c = canvas_set_black(c, 2, 1);
+  c = canvas_set_black(c, 1, 5);
+  c = canvas_set_black(c, 13, 4);
 
-    /*
-    Diese drei Funktionsaufrufe hier drüber färben drei unterschiedliche Pixel der Canvas schwarz.
-    Versuchen Sie sich vorzustellen, wo diese drei Pixel gemäß unseres Koordinatensystems sein sollten.
+  /*
+  Diese drei Funktionsaufrufe hier drüber färben drei unterschiedliche Pixel der Canvas schwarz.
+  Versuchen Sie sich vorzustellen, wo diese drei Pixel gemäß unseres Koordinatensystems sein sollten.
 
-    Führen Sie jetzt den Test für diese Aufgabe aus, indem Sie diesen Befehl nutzen:
-    clang -std=c11 -g -Wall 03ex_test.c -o 03ex_test.o -lm && ./03ex_test.o first_canvas_exercise
+  Führen Sie jetzt den Test für diese Aufgabe aus, indem Sie diesen Befehl nutzen:
+  clang -std=c11 -g -Wall 03ex_test.c -o 03ex_test.o -lm && ./03ex_test.o first_canvas_exercise
 
-    Der Test wird fehlschlagen, da wir drei leicht andere Pixel-Positionen schwarz gefärbt haben wollen. Schauen Sie sich
-    die Test-Ausgabe an. Diese sollte Sie darüber informieren, dass ein Bild in einem "Feedback" Verzeichnis (im aktuellen Verzeichnis)
-    gespeichert wurde, welches Ihnen die Abweichung darstellt.
-    Öffnen Sie das Bild (eventuell müssen Sie etwas hineinzoomen, es ist recht klein).
-    Das Bild ist in drei Segmente unterteilt. Zuerst das Bild welches Sie erstellt haben,
-    dann das erwartete Bild, und als drittes eine Visualisierung
-    welche Pixel in ihrer Farbe vom erwarteten Bild abweichen.
+  Der Test wird fehlschlagen, da wir drei leicht andere Pixel-Positionen schwarz gefärbt haben wollen. Schauen Sie sich
+  die Test-Ausgabe an. Diese sollte Sie darüber informieren, dass ein Bild in einem "Feedback" Verzeichnis (im aktuellen Verzeichnis)
+  gespeichert wurde, welches Ihnen die Abweichung darstellt.
+  Öffnen Sie das Bild (eventuell müssen Sie etwas hineinzoomen, es ist recht klein).
+  Das Bild ist in drei Segmente unterteilt. Zuerst das Bild welches Sie erstellt haben,
+  dann das erwartete Bild, und als drittes eine Visualisierung
+  welche Pixel in ihrer Farbe vom erwarteten Bild abweichen.
 
-    Nutzen Sie diese Visualisierung, um die drei Funktionsaufrufe oben so zu verändern, dass Ihr Bild und das erwartete
-    Bild übereinstimmen. Sie können den Test beliebig oft ausführen, um neue Feedback-Bilder zu erzeugen.
+  Nutzen Sie diese Visualisierung, um die drei Funktionsaufrufe oben so zu verändern, dass Ihr Bild und das erwartete
+  Bild übereinstimmen. Sie können den Test beliebig oft ausführen, um neue Feedback-Bilder zu erzeugen.
 
-    Desweiteren existiert die `canvas_save_debug(Canvas c)` Funktion. Dieser können Sie jederzeit eine Canvas übergeben,
-    um sie als Bild abzuspeichern. Die Bilder erscheinen im "Debug" Ordner und sind
-    aufsteigend nummeriert, falls Sie für eine Canvas die Funktion mehrfach aufrufen. Probieren Sie die Funktion doch
-    ein paar mal mit dem Canvas in dieser Aufgabe aus, zum Beispiel jedes mal nachdem ein Pixel gesetzt wurde!
+  Desweiteren existiert die `canvas_save_debug(Canvas c)` Funktion. Dieser können Sie jederzeit eine Canvas übergeben,
+  um sie als Bild abzuspeichern. Die Bilder erscheinen im "Debug" Ordner und sind
+  aufsteigend nummeriert, falls Sie für eine Canvas die Funktion mehrfach aufrufen. Probieren Sie die Funktion doch
+  ein paar mal mit dem Canvas in dieser Aufgabe aus, zum Beispiel jedes mal nachdem ein Pixel gesetzt wurde!
 
-    Sobald der Test erfolgreich ist, verschwindet das Feedback. Anstelle dessen können sie Ihre erfolgreiche Lösung
-    im "Success" Ordner bestaunen :). Dies gilt genauso für alle weiteren Canvas-Aufgaben!
-    */
+  Sobald der Test erfolgreich ist, verschwindet das Feedback. Anstelle dessen können sie Ihre erfolgreiche Lösung
+  im "Success" Ordner bestaunen :). Dies gilt genauso für alle weiteren Canvas-Aufgaben!
+  */
 
-    return c;
+  return c;
 }
 
 /*
@@ -113,7 +144,13 @@ Hinweis: Koordinaten beginnen bei `0`, nicht bei `1`.
 */
 Canvas color_corners(Canvas c)
 {
-    return c;
+  int width = canvas_width(c);
+  int height = canvas_height(c);
+  c = canvas_set_black(c, 0, 0);
+  c = canvas_set_black(c, width - 1, 0);
+  c = canvas_set_black(c, 0, height - 1);
+  c = canvas_set_black(c, width - 1, height - 1);
+  return c;
 }
 
 /*
@@ -122,7 +159,16 @@ Färben Sie alle Pixel der Canvas schwarz.
 */
 Canvas paint_it_black(Canvas c)
 {
-    return c;
+  int width = canvas_width(c);
+  int height = canvas_height(c);
+  for (int y = 0; y < height; y++)
+  {
+    for (int x = 0; x < width; x++)
+    {
+      c = canvas_set_black(c, x, y);
+    }
+  }
+  return c;
 }
 
 /*
@@ -134,7 +180,23 @@ Falls eine Reihe nicht breit genug ist, färben Sie alle Pixel dieser Reihe schw
 */
 Canvas descending_diagonal(Canvas c)
 {
-    return c;
+  int width = canvas_width(c);
+  int height = canvas_height(c);
+
+  // Start from the top row and work downward
+  for (int row = 0; row < height; row++)
+  {
+    int y = height - 1 - row;      // Convert row index to y-coordinate (top-down)
+    int pixels_to_color = row + 1; // Number of pixels to color in this row
+
+    // Color the specified number of pixels from left to right
+    for (int x = 0; x < pixels_to_color && x < width; x++)
+    {
+      c = canvas_set_black(c, x, y);
+    }
+  }
+
+  return c;
 }
 
 /*
@@ -145,7 +207,30 @@ auf die Canvas passt, sollen einfach die Teile ignoriert werden welche außerhal
 */
 Canvas draw_rectangle(Canvas c, int x, int y, int width, int height)
 {
-    return c;
+  int canvas_width_val = canvas_width(c);
+  int canvas_height_val = canvas_height(c);
+
+  // Clamp coordinates to canvas boundaries
+  int start_x = (x < 0) ? 0 : x;
+  int end_x = (x + width > canvas_width_val) ? canvas_width_val : x + width;
+
+  int start_y = (y >= canvas_height_val) ? canvas_height_val - 1 : y;
+  int end_y = (y - height + 1 < 0) ? 0 : y - height + 1;
+
+  // Only proceed if at least part of the rectangle is within the canvas
+  if (start_x < end_x && start_y >= end_y)
+  {
+    // Draw the visible part of the rectangle
+    for (int i = start_x; i < end_x; i++)
+    {
+      for (int j = start_y; j >= end_y; j--)
+      {
+        c = canvas_set_black(c, i, j);
+      }
+    }
+  }
+
+  return c;
 }
 
 /*
@@ -159,5 +244,13 @@ Wir empfehlen beides auszuprobieren und selbst zu entscheiden welche Lösung Sie
 */
 Canvas draw_rectangle_via_corners(Canvas c, int x0, int y0, int x1, int y1)
 {
-    return c;
+  // Calculate width and height from the corners
+  int width = x1 - x0 + 1;
+  int height = y0 - y1 + 1;
+
+  // Simply call draw_rectangle with the appropriate parameters
+  // The draw_rectangle function already handles clipping
+  c = draw_rectangle(c, x0, y0, width, height);
+
+  return c;
 }
