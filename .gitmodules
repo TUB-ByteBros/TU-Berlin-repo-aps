@@ -1,0 +1,6 @@
+[submodule "WiSe2025-26/C-Programming/thirdparty/nob.h"]
+	path = WiSe2025-26/C-Programming/thirdparty/nob.h
+	url = https://github.com/tsoding/nob.h.git
+[submodule "WiSe2025-26/C-Programming/thirdparty/flag.h"]
+	path = WiSe2025-26/C-Programming/thirdparty/flag.h
+	url = https://github.com/tsoding/flag.h.git
