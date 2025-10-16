@@ -51,10 +51,10 @@ this is header-only library for making build-scripts using C.
   the third lesson with more fundamentals and the first group of exercises and practicing tasks
 
   [[2025-10-14/01_Aufgaben/01ex.c][File: 01ex.c]]
-  [[2025-10-14/01_Uebungen/01practise.c][File: 01practice.c]]
+  [[2025-10-14/01_Uebungen/01practice.c][File: 01practice.c]]
 
 * 2025-10-16
   the fourth lesson with more fundamentals and the third group of exercises and practicing tasks
 
-  [[2025-10-16/03_Aufgaben/01ex.c][File: 01ex.c]]
-  [[2025-10-16/03_Uebungen/01practise.c][File: 01practice.c]]
+  [[2025-10-16/03_Aufgaben/03ex.c][File: 03ex.c]]
+  [[2025-10-16/03_Uebungen/03practice.c][File: 03practice.c]]
