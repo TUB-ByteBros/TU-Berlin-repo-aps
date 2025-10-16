@@ -17,7 +17,7 @@
 * Default
   This is a simple Hello World program in C using nob.h to build and run the program.
 
-  [[Default/src/main.c][File: main.c]]
+  - [[Default/src/main.c][File: main.c]]
 
 * thirdparty
 
@@ -25,16 +25,15 @@
 
 This is a header-only library that makes it simple to add flags to C/C++ programs like it was Go.
 
-[[https://github.com/tsoding/flag.h.git][Origin]]
-
-[[https://github.com/tsoding/flag.h/blob/master/flag.h][File: flag.h]]
+  - [[https://github.com/tsoding/flag.h.git][Origin]]
+  - [[https://github.com/tsoding/flag.h/blob/master/flag.h][File: flag.h]]
 
 ** nob.h
 
 this is header-only library for making build-scripts using C.
 
-  * [[https://github.com/tsoding/nob.h.git][Origin]]
-  * [[https://github.com/tsoding/nob.h/blob/main/nob.h][File: nob.h]]
+  - [[https://github.com/tsoding/nob.h.git][Origin]]
+  - [[https://github.com/tsoding/nob.h/blob/main/nob.h][File: nob.h]]
 
 * 2025-10-13
   This was the first lesson for the fundamentals
@@ -43,17 +42,17 @@ this is header-only library for making build-scripts using C.
 * 2025-10-14
   the second lesson with more fundamentals and the first group of exercises and practicing tasks
 
-  * [[2025-10-14/01_Aufgaben/01ex.c][File: 01ex.c]]
-  * [[2025-10-14/01_Uebungen/01practice.c][File: 01practice.c]]
+  - [[2025-10-14/01_Aufgaben/01ex.c][File: 01ex.c]]
+  - [[2025-10-14/01_Uebungen/01practice.c][File: 01practice.c]]
 
 * 2025-10-15
   the third lesson with more fundamentals and the first group of exercises and practicing tasks
 
-  * [[2025-10-14/01_Aufgaben/01ex.c][File: 01ex.c]]
-  * [[2025-10-14/01_Uebungen/01practice.c][File: 01practice.c]]
+  - [[2025-10-14/01_Aufgaben/01ex.c][File: 01ex.c]]
+  - [[2025-10-14/01_Uebungen/01practice.c][File: 01practice.c]]
 
 * 2025-10-16
   the fourth lesson with more fundamentals and the third group of exercises and practicing tasks
 
-  * [[2025-10-16/03_Aufgaben/03ex.c][File: 03ex.c]]
-  * [[2025-10-16/03_Uebungen/03practice.c][File: 03practice.c]]
+  - [[2025-10-16/03_Aufgaben/03ex.c][File: 03ex.c]]
+  - [[2025-10-16/03_Uebungen/03practice.c][File: 03practice.c]]
