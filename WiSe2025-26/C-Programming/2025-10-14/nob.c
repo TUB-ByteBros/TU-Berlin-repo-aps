@@ -5,7 +5,8 @@
 #define FLAG_IMPLEMENTATION
 #include "flag.h"
 
-typedef struct {
+typedef struct
+{
   char **items;
   int capacity;
   int count;
@@ -25,7 +26,8 @@ char *PRACTICE_TEST;
 char *EX_TEST_C;
 char *PRACTICE_TEST_C;
 
-void cmd_cc() {
+void cmd_cc()
+{
 #ifdef _WIN32
   cmd_append(&cmd, "clang");
 #else
@@ -35,13 +37,15 @@ void cmd_cc() {
   cmd_append(&cmd, "-std=c11", "-Wall", "-lm");
 }
 
-void usage(FILE *stream) {
+void usage(FILE *stream)
+{
   fprintf(stream, "Usage: ./example [OPTIONS] [--] [ARGS]\n");
   fprintf(stream, "OPTIONS:\n");
   flag_print_options(stream);
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
 
   da_append_many(&ARGS, argv, argc);
 
@@ -50,8 +54,8 @@ int main(int argc, char **argv) {
   EX_DIR = temp_sprintf("./%02d_Aufgaben", group);
   PRACTICE_DIR = temp_sprintf("./%02d_Uebungen", group);
 
-  PRACTICE_TEST = temp_sprintf("%s/%02dpractice_test.o", BUILD_DIR, group);
-  EX_TEST = temp_sprintf("%s/%02dex_test.o", BUILD_DIR, group);
+  PRACTICE_TEST = temp_sprintf("%02dpractice_test.o", group);
+  EX_TEST = temp_sprintf("%02dex_test.o", group);
   PRACTICE_TEST_C = temp_sprintf("%s/%02dpractice_test.c", PRACTICE_DIR, group);
   EX_TEST_C = temp_sprintf("%s/%02dex_test.c", EX_DIR, group);
 
@@ -84,7 +88,8 @@ int main(int argc, char **argv) {
   flag_bool_var(&build_practice, "-build_pr", false, "Build Practice");
   flag_bool_var(&clean, "-clean", false, "Clean build directory");
 
-  if (!flag_parse(ARGS.count, ARGS.items)) {
+  if (!flag_parse(ARGS.count, ARGS.items))
+  {
     usage(stderr);
     flag_print_error(stderr);
     exit(1);
@@ -93,18 +98,20 @@ int main(int argc, char **argv) {
   argc = flag_rest_argc();
   argv = flag_rest_argv();
 
-  if (help || hhelp) {
+  if (help || hhelp)
+  {
     usage(stdout);
     exit(0);
   }
 
-  if (build_ex || bbuild_ex) {
+  if (build_ex || bbuild_ex)
+  {
 
     if (!nob_mkdir_if_not_exists(BUILD_DIR))
       return 1;
 
     cmd_cc();
-    cmd_append(&cmd, "-o", EX_TEST);
+    cmd_append(&cmd, "-o", temp_sprintf("%s/%s", BUILD_DIR, EX_TEST));
     cmd_append(&cmd, temp_sprintf("-I%s", EX_DIR));
     cmd_append(&cmd, EX_TEST_C);
     if (!cmd_run(&cmd))
@@ -119,34 +126,41 @@ int main(int argc, char **argv) {
       return 1;
 
     cmd_cc();
-    cmd_append(&cmd, "-o", PRACTICE_TEST);
-    cmd_append(&cmd, temp_sprintf("-I%s", PRACTICE_TEST));
+    cmd_append(&cmd, "-o", temp_sprintf("%s/%s", BUILD_DIR, PRACTICE_TEST));
+    cmd_append(&cmd, temp_sprintf("-I%s", PRACTICE_DIR));
     cmd_append(&cmd, PRACTICE_TEST_C);
     if (!cmd_run(&cmd))
       return 1;
     cmd.count = 0;
   }
 
-  if (run_ex || rrun_ex) {
-    cmd_append(&cmd, EX_TEST);
+  if (run_ex || rrun_ex)
+  {
+    set_current_dir(BUILD_DIR);
+    cmd_append(&cmd, temp_sprintf("./%s", EX_TEST));
     if (!cmd_run(&cmd))
       return 1;
     cmd.count = 0;
+    set_current_dir("..");
   }
 
-  if (run_practice || rrun_practice) {
-    cmd_append(&cmd, PRACTICE_TEST);
+  if (run_practice || rrun_practice)
+  {
+    set_current_dir(BUILD_DIR);
+    cmd_append(&cmd, temp_sprintf("./%s", PRACTICE_TEST));
     if (!cmd_run(&cmd))
       return 1;
     cmd.count = 0;
+    set_current_dir("..");
   }
 
-  if (clean) {
-    #ifdef _WIN32
+  if (clean)
+  {
+#ifdef _WIN32
     cmd_append(&cmd, "rmdir", "/s", "/q", BUILD_DIR);
-    #else
+#else
     cmd_append(&cmd, "rm", "-rf", BUILD_DIR);
-    #endif
+#endif
     if (!cmd_run(&cmd))
       return 1;
     cmd.count = 0;

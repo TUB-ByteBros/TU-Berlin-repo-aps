@@ -54,8 +54,8 @@ int main(int argc, char **argv)
   EX_DIR = temp_sprintf("./%02d_Aufgaben", group);
   PRACTICE_DIR = temp_sprintf("./%02d_Uebungen", group);
 
-  PRACTICE_TEST = temp_sprintf("%s/%02dpractice_test.o", BUILD_DIR, group);
-  EX_TEST = temp_sprintf("%s/%02dex_test.o", BUILD_DIR, group);
+  PRACTICE_TEST = temp_sprintf("%02dpractice_test.o", group);
+  EX_TEST = temp_sprintf("%02dex_test.o", group);
   PRACTICE_TEST_C = temp_sprintf("%s/%02dpractice_test.c", PRACTICE_DIR, group);
   EX_TEST_C = temp_sprintf("%s/%02dex_test.c", EX_DIR, group);
 
@@ -111,7 +111,7 @@ int main(int argc, char **argv)
       return 1;
 
     cmd_cc();
-    cmd_append(&cmd, "-o", EX_TEST);
+    cmd_append(&cmd, "-o", temp_sprintf("%s/%s", BUILD_DIR, EX_TEST));
     cmd_append(&cmd, temp_sprintf("-I%s", EX_DIR));
     cmd_append(&cmd, EX_TEST_C);
     if (!cmd_run(&cmd))
@@ -126,8 +126,8 @@ int main(int argc, char **argv)
       return 1;
 
     cmd_cc();
-    cmd_append(&cmd, "-o", PRACTICE_TEST);
-    cmd_append(&cmd, temp_sprintf("-I%s", PRACTICE_TEST));
+    cmd_append(&cmd, "-o", temp_sprintf("%s/%s", BUILD_DIR, PRACTICE_TEST));
+    cmd_append(&cmd, temp_sprintf("-I%s", PRACTICE_DIR));
     cmd_append(&cmd, PRACTICE_TEST_C);
     if (!cmd_run(&cmd))
       return 1;
@@ -136,18 +136,22 @@ int main(int argc, char **argv)
 
   if (run_ex || rrun_ex)
   {
-    cmd_append(&cmd, EX_TEST);
+    set_current_dir(BUILD_DIR);
+    cmd_append(&cmd, temp_sprintf("./%s", EX_TEST));
     if (!cmd_run(&cmd))
       return 1;
     cmd.count = 0;
+    set_current_dir("..");
   }
 
   if (run_practice || rrun_practice)
   {
-    cmd_append(&cmd, PRACTICE_TEST);
+    set_current_dir(BUILD_DIR);
+    cmd_append(&cmd, temp_sprintf("./%s", PRACTICE_TEST));
     if (!cmd_run(&cmd))
       return 1;
     cmd.count = 0;
+    set_current_dir("..");
   }
 
   if (clean)
