@@ -27,7 +27,7 @@ This is a header-only library that makes it simple to add flags to C/C++ program
 
 [[https://github.com/tsoding/flag.h.git][Origin]]
 
-[[thirdparty/flag.h/flag.h][File: flag.h]]
+[[https://github.com/tsoding/flag.h/flag.h][File: flag.h]]
 
 ** nob.h
 
@@ -35,7 +35,7 @@ this is header-only library for making build-scripts using C.
 
 [[https://github.com/tsoding/nob.h.git][Origin]]
 
-[[thirdparty/nob.h/nob.h][File: nob.h]]
+[[https://github.com/tsoding/nob.h/nob.h][File: nob.h]]
 
 * 2025-10-13
   This was the first lesson for the fundamentals
