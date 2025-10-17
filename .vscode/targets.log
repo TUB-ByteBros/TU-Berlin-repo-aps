@@ -6,11 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
-make: *** No rule to make target `all'.  Stop.
 
-
-# Make data base, printed on Thu Oct 16 11:06:11 2025
+# Make data base, printed on Fri Oct 17 12:16:44 2025
 
 # Variables
 
@@ -47,7 +44,7 @@ _ZPLUG_CONFIG_SUBSHELL = :
 # environment
 _ = /usr/bin/make
 # environment
-POSH_SESSION_ID = 30b34b70-5702-4b54-a179-0cf73dccd817
+POSH_SESSION_ID = 747f7e56-f811-440f-8405-cd399aaa094a
 # makefile
 MAKEFILE_LIST := 
 # environment
@@ -67,7 +64,7 @@ HOMEBREW_AUTO_UPDATE_SECS = 1
 # environment
 VSCODE_CWD = /
 # environment
-ATUIN_SESSION = 0199e83abf0f7ee0925acb5f98443efa
+ATUIN_SESSION = 0199f1ab1c8c7540a34588e8d74dec1a
 # environment
 PATH = /opt/homebrew/opt/rustup/bin:/opt/homebrew/opt/llvm/bin:/Users/mahd/.console-ninja/.bin:/Users/mahd/.bun/bin:/opt/homebrew/opt/php@8.2/sbin:/opt/homebrew/opt/php@8.2/bin:/opt/homebrew/Cellar/zplug/2.4.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin/vim:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/mahd/.bun/bin/:/opt/homebrew/opt/ruby/bin:/Applications/OrbStack.app/Contents/MacOS:/Applications/OrbStack.app/Contents/MacOS/bin:/Applications/OrbStack.app/Contents/MacOS/xbin:/Users/mahd/Library/Python/3.9/bin:/Users/mahd/.yarn/bin:/Users/mahd/.config/yarn/global/node_modules/.bin: /opt/homebrew/opt/ccache/libexec:/Applications/Kitty.app/Contents/MacOS:/Applications/Alacritty.app/Contents/MacOS:/Users/mahd/exe/separator:/Users/mahd/exe:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/lib/ruby/gems/3.4.0/bin:/usr/local/bin/composer:/Users/mahd/.config/tmux/plugins/t-smart-tmux-session-manager/bin:/Users/mahd/.tmux/plugins/t-smart-tmux-session-manager/bin:/Users/mahd/go/bin:usr/local/opt/llvm/bin/clangd:/usr/local/Cellar/llvm/10.0.1/bin/clangd:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/MacGPG2/bin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Users/mahd/.rvm/bin:/Applications:/Users/mahd/.lmstudio/bin:/Users/mahd/.orbstack/bin:/usr/local/sbin:/usr/local/go/bin:/Users/mahd/.dotnet/tools:/Volumes/SD200/Applications:/users/mahd/.spicetify:/Users/mahd/.lmstudio/bin
 # environment
@@ -117,7 +114,7 @@ POWERLINE_COMMAND = oh-my-posh
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/mahd/Library/Application Support/Code/CachedData/03c265b1adee71ac88f833e065f7bb956b60550a
+VSCODE_CODE_CACHE_PATH = /Users/mahd/Library/Application Support/Code/CachedData/7d842fb85a0275a4a8e4d7e040d2625abbf7f084
 # environment
 LOGNAME = mahd
 # environment
@@ -144,7 +141,6 @@ OSTYPE = darwin25.0
 SHLVL = 1
 # environment
 VSCODE_ESM_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
- 
 # environment
 POSH_SHELL_VERSION = 5.9
 # default
@@ -155,8 +151,6 @@ USER = mahd
 ZLE_RPROMPT_INDENT = 0
 # makefile
 .DEFAULT_GOAL := 
-# environment
-APPLICATION_INSIGHTS_NO_STATSBEAT = true
 # environment
 CLASSPATH = :/Library/Java/Extensions/mariadb-java-client-2.2.6.jar
 # automatic
@@ -186,13 +180,11 @@ MFLAGS = -Rrqp
 # environment
 NVM_DIR = /Users/mahd/.nvm
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.72014859.72014865
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.73308500.73312048
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
-# environment
-VSCODE_L10N_BUNDLE_LOCATION = 
 # automatic
 +F = $(notdir $+)
 # environment
@@ -244,9 +236,9 @@ VIRTUAL_ENV_DISABLE_PROMPT = 1
 # environment
 DOCKER_HOST = unix:///var/run/docker.sock
 # environment
-VSCODE_PID = 42061
+VSCODE_PID = 36705
 # variable set hash-table stats:
-# Load=115/1024=11%, Rehash=0, Collisions=10/136=7%
+# Load=113/1024=11%, Rehash=0, Collisions=10/134=7%
 
 # Pattern-specific Variable Values
 
@@ -254,7 +246,6 @@ VSCODE_PID = 42061
 
 # Directories
 
- 
 # . (device 16777229, inode 68421093): 19 files, no impossibilities.
 
 # 19 files, no impossibilities in 1 directories.
@@ -329,6 +320,8 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Thu Oct 16 11:06:11 2025
+# Finished Make data base on Fri Oct 17 12:16:44 2025
 
  
+make: *** No rule to make target `all'.  Stop.
+

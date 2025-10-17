@@ -13,7 +13,7 @@ endif
 
 .PHONY: all run_ex build_ex run_pr build_pr nob clean
 
-all: clean run_ex run_pr
+all: run_ex run_pr
 
 # Build nob tool first, then use it to build and run
 run_ex: build_ex
