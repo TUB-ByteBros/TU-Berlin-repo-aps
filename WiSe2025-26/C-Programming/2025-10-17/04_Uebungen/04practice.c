@@ -8,8 +8,8 @@ clang -std=c11 -g -Wall 04practice_test.c -o 04practice_test.o -lm && ./04practi
 Auf diesem Blatt geht es primär darum, komplexe Probleme erfolgreich anzugehen.
 */
 
-#include <stdio.h>
 #include "04_canvas.h"
+#include <stdio.h>
 
 /*
 Nehme eine dreistellige Zahl, sortiere ihre Ziffern absteigend, und subtrahiere von dieser Zahl die Zahl die
@@ -32,8 +32,54 @@ Beispiele: 'kaprekar_count_steps(792) == 3', 'kaprekar_count_steps(693) == 2',
 Hinweis: Sollte die Eingabe 'x' kleiner als 100 sein (also weniger als 3 Dezimalstellen besitzen), sollte sie trotzdem
 dreistellig behandelt werden, indem Nullen vorangesetzt werden. D.H. 64 ~> 640 - 046 = 594.
 */
-int kaprekar_count_steps(int x) {
-    return 0;
+int kaprekar_count_steps(int x)
+{
+    int steps = 0;
+
+    for (;;)
+    {
+        // Extrahiere die drei Ziffern
+        int d1 = x / 100;
+        int d2 = (x / 10) % 10;
+        int d3 = x % 10;
+
+        // Sortiere Ziffern in aufsteigender Reihenfolge
+        int temp;
+        if (d1 > d2)
+        {
+            temp = d1;
+            d1 = d2;
+            d2 = temp;
+        }
+        if (d2 > d3)
+        {
+            temp = d2;
+            d2 = d3;
+            d3 = temp;
+        }
+        if (d1 > d2)
+        {
+            temp = d1;
+            d1 = d2;
+            d2 = temp;
+        }
+
+        // Bilde die aufsteigende und absteigende Zahl
+        int asc = d1 * 100 + d2 * 10 + d3;
+        int desc = d3 * 100 + d2 * 10 + d1;
+
+        // Berechne die Differenz
+        int result = desc - asc;
+
+        // Prüfe, ob wir einen Fixpunkt erreicht haben
+        if (result == x)
+        {
+            return steps;
+        }
+
+        x = result;
+        steps++;
+    }
 }
 
 /*
@@ -43,6 +89,53 @@ von 'x' die Zahl 'y' ergibt.
 Bonus: Gibt es ein Muster, dass man ausnutzen kann um 'kaprekar_count_steps' effizienter zu implementieren als
 alle Schritte durchzuführen?
 */
-Canvas plot_kaprekar(Canvas c) {
+Canvas plot_kaprekar(Canvas c)
+{
+    int width = canvas_width(c);
+    int height = canvas_height(c);
+
+    // Iteriere über alle möglichen x-Koordinaten
+    for (int x = 0; x < width; x++)
+    {
+        // Berechne das Kaprekar-Ergebnis für x
+        int d1 = x / 100;
+        int d2 = (x / 10) % 10;
+        int d3 = x % 10;
+
+        // Sortiere Ziffern in aufsteigender Reihenfolge
+        int temp;
+        if (d1 > d2)
+        {
+            temp = d1;
+            d1 = d2;
+            d2 = temp;
+        }
+        if (d2 > d3)
+        {
+            temp = d2;
+            d2 = d3;
+            d3 = temp;
+        }
+        if (d1 > d2)
+        {
+            temp = d1;
+            d1 = d2;
+            d2 = temp;
+        }
+
+        // Bilde aufsteigende und absteigende Zahl
+        int asc = d1 * 100 + d2 * 10 + d3;
+        int desc = d3 * 100 + d2 * 10 + d1;
+
+        // Berechne die Differenz (das Kaprekar-Ergebnis)
+        int result = desc - asc;
+
+        // Wenn das Ergebnis innerhalb der Canvas-Höhe liegt, färbe den Pixel schwarz
+        if (result >= 0 && result < height)
+        {
+            c = canvas_set_black(c, x, result);
+        }
+    }
+
     return c;
 }

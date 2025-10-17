@@ -6,7 +6,9 @@ clang -std=c11 -g -Wall 04ex_test.c 04ex_helpers.c -o 04ex_test.o -lm && ./04ex_
 */
 
 #include "04_canvas.h"
+#include "04ex_helpers.c"
 #include "04ex_helpers.h"
+#include <assert.h>
 #include <stdio.h>
 
 /*
@@ -23,7 +25,32 @@ Nutzen Sie für die Distanzbestimmung die `distance` Funktion aus `04ex_helpers.
 Headerfile und die zugehörige Implementierung sind bereits eingebunden, die Funktion kann
 also einfach verwendet werden.
 */
-Canvas draw_odd_circle(Canvas c, int x, int y, int radius_from_middle) {
+Canvas draw_odd_circle(Canvas c, int x, int y, int radius_from_middle)
+{
+    // Get canvas dimensions
+    int width = canvas_width(c);
+    int height = canvas_height(c);
+
+    // Iterate through a square area around the center
+    for (int current_x = x - radius_from_middle; current_x <= x + radius_from_middle; current_x++)
+    {
+        for (int current_y = y - radius_from_middle; current_y <= y + radius_from_middle; current_y++)
+        {
+            // Check if the current position is within the canvas bounds
+            if (current_x >= 0 && current_x < width && current_y >= 0 && current_y < height)
+            {
+                // Calculate the distance from the center
+                int dist = distance(x, y, current_x, current_y);
+
+                // If the distance is less than or equal to the radius, set the pixel to black
+                if (dist <= radius_from_middle)
+                {
+                    c = canvas_set_black(c, current_x, current_y);
+                }
+            }
+        }
+    }
+
     return c;
 }
 
@@ -36,18 +63,40 @@ Sei `a := x1 - x0` und `b := y1 - y0`. Dann liefert uns der Satz des Pythagoras 
 Die Datei `04ex_helpers.h` mit den Hilsfunktionen enthält eine Funktion `squareroot`. Nutzen Sie diese Funktion, um die
 Distanz zu berechnen.
 */
-int my_distance(int x0, int y0, int x1, int y1) {
-    return 0;
+int my_distance(int x0, int y0, int x1, int y1)
+{
+    // Calculate a = x1 - x0
+    int a = x1 - x0;
+
+    // Calculate b = y1 - y0
+    int b = y1 - y0;
+
+    // Calculate a^2 + b^2
+    int sum_of_squares = a * a + b * b;
+
+    // Calculate the square root using the provided function
+    int distance = squareroot(sum_of_squares);
+
+    return distance;
 }
 
-/*
-Aufgabe 1c:
-Implementieren Sie nun selbst die Berechnung der abgerundeten Quadratwurzel von `n`.
-Tipp: Finden Sie die größte natürliche Zahl, deren Quadrat kleiner oder gleich `n` ist. Es muss nicht effizient sein, wir
-testen nur mit relativ kleinen Zahlen.
-*/
-int my_squareroot(int n) {
-    return 0;
+int my_squareroot(int n)
+{
+    // Handle special cases
+    if (n <= 1)
+    {
+        return n;
+    }
+
+    // Find largest integer i where i*i <= n
+    int i = 1;
+    while (i * i <= n)
+    {
+        i++;
+    }
+
+    // Return the integer whose square is less than or equal to n
+    return i - 1;
 }
 
 /*
@@ -63,7 +112,37 @@ Um Kreise mit _ungeradem_ Durchmesser zu erstellen, können Sie einfach Ihre `dr
 Für Kreise mit _geradem_ Durchmesser rufen Sie Ihre `draw_odd_circle` vier mal auf: Einmal für jeden der vier Pixel
 welche den exakten Mittelpunkt des erwünschten Kreises umgeben.
 */
-Canvas draw_circle(Canvas c, int x, int y, int diameter) {
+Canvas draw_circle(Canvas c, int x, int y, int diameter)
+{
+    // Check if diameter is odd or even
+    if (diameter % 2 == 1)
+    {
+        // For odd diameter: call draw_odd_circle once with the middle pixel as center
+        int center_x = x + diameter / 2;
+        int center_y = y + diameter / 2;
+        int radius = diameter / 2;
+        c = draw_odd_circle(c, center_x, center_y, radius);
+    }
+    else
+    {
+        // For even diameter: call draw_odd_circle four times, once for each of the
+        // four pixels surrounding the center
+        int half_diameter = diameter / 2;
+        int radius = half_diameter - 1;
+
+        // Top right pixel
+        c = draw_odd_circle(c, x + half_diameter, y + half_diameter, radius);
+
+        // Top left pixel
+        c = draw_odd_circle(c, x + half_diameter - 1, y + half_diameter, radius);
+
+        // Bottom right pixel
+        c = draw_odd_circle(c, x + half_diameter, y + half_diameter - 1, radius);
+
+        // Bottom left pixel
+        c = draw_odd_circle(c, x + half_diameter - 1, y + half_diameter - 1, radius);
+    }
+
     return c;
 }
 
@@ -73,8 +152,9 @@ Dadurch, dass Sie das Problem in kleinere Subprobleme geteilt haben, haben Sie g
 Kreisezeichnen implementiert. Das ist ziemlich cool!
 Geben Sie zur Feier `5` zurück.
 */
-int high_five() {
-    return 0;
+int high_five()
+{
+    return 5;
 }
 
 /*
@@ -85,8 +165,30 @@ die Sie dafür benötigen ist die _Hailstone-Zahl von `n`_.
 Zum Beispiel `hailstone(1) == 0`, `hailstone(4) == 2` (4 -> 2 -> 1), und `hailstone(5) == 5` (5 -> 16 -> 8 -> 4 -> 2 -> 1).
 Berechnen Sie die Hailstone-Zahl vom Parameter `n`.
 */
-int hailstone(int n) {
-    return 0;
+int hailstone(int n)
+{
+    // Count number of steps
+    int steps = 0;
+
+    // Continue until we reach 1
+    while (n > 1)
+    {
+        // If n is even, divide by 2
+        if (n % 2 == 0)
+        {
+            n = n / 2;
+        }
+        // If n is odd, multiply by 3 and add 1
+        else
+        {
+            n = 3 * n + 1;
+        }
+
+        // Increment step count
+        steps++;
+    }
+
+    return steps;
 }
 
 /*
@@ -99,6 +201,9 @@ Für die _Bewertung_ von diesem Aufgabenblatt lassen wir Tests für Aufgabe 2a l
 allerdings Ihre eigenen Tests schreiben.
 Lassen Sie `99` von dieser Funktion zurückgeben um zu zeigen, dass Sie das verstanden haben.
 */
-int bring_your_own_tests() {
-    return 0;
+int bring_your_own_tests()
+{
+    printf("hailstone(7) = %d\n", hailstone(7)); // Expected: 16
+    assert(hailstone(7) == 16);
+    return 99;
 }
