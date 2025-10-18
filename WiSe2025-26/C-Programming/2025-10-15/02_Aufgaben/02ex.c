@@ -15,9 +15,10 @@ Wie auch auf dem ersten Aufgabenblatt können Sie alles außer den Kommentaren i
 und Ihre Lösungen zwischen den "BEGIN CHANGES" und "END CHANGES" eintragen.
 */
 
-#include <stdio.h> 
+#include <stdio.h>
 
-int sum_divisible_both(int n) {
+int sum_divisible_both(int n)
+{
     int result = 0;
     /*
     Aufgabe 1a:
@@ -25,12 +26,19 @@ int sum_divisible_both(int n) {
     durch `7` *als auch* durch `13` teilbar sind.
     */
     /* BEGIN CHANGES */
-
+    for (int i = 0; i <= n; i++)
+    {
+        if (i % 7 == 0 && i % 13 == 0)
+        {
+            result += i;
+        }
+    }
     /* END CHANGES */
     return result;
 }
 
-int sum_divisible_or(int n) {
+int sum_divisible_or(int n)
+{
     int result = 0;
     /*
     Aufgabe 1b:
@@ -38,38 +46,64 @@ int sum_divisible_or(int n) {
     durch `7` *oder* durch `13` teilbar sind (das beinhaltet auch die Zahlen, die durch beides teilbar sind).
     */
     /* BEGIN CHANGES */
-
+    for (int i = 0; i <= n; i++)
+    {
+        if (i % 7 == 0 || i % 13 == 0)
+        {
+            result += i;
+        }
+    }
     /* END CHANGES */
     return result;
 }
 
-int sum_divisible_either(int n) {
-   int result = 0;
+int sum_divisible_either(int n)
+{
+    int result = 0;
     /*
     Aufgabe 1c:
     Weisen Sie der Variable `result` die Summe aller Ganzzahlen zwischen `0` und `n` (inklusive) zu, welche *entweder*
     durch `7` *oder* durch `13` teilbar sind (aber nicht durch beides).
     */
     /* BEGIN CHANGES */
-
+    for (int i = 0; i <= n; i++)
+    {
+        if ((i % 7 == 0 || i % 13 == 0) && !(i % 7 == 0 && i % 13 == 0))
+        {
+            result += i;
+        }
+    }
     /* END CHANGES */
     return result;
 }
 
-int signum(int x) {
-   int result = 0;
+int signum(int x)
+{
+    int result = 0;
     /*
     Aufgabe 2a:
     Weisen Sie der Variable `result` den Wert `-1` zu, falls `x` strikt negativ ist, `0` falls `x` gleich `0` ist, und
     `1` falls `x` strikt positiv ist.
     */
     /* BEGIN CHANGES */
-
+    if (x < 0)
+    {
+        result = -1;
+    }
+    else if (x == 0)
+    {
+        result = 0;
+    }
+    else
+    {
+        result = 1;
+    }
     /* END CHANGES */
     return result;
 }
 
-int is_leapyear(int year) {
+int is_leapyear(int year)
+{
     int result = 0;
     /*
     Aufgabe 2b:
@@ -79,24 +113,43 @@ int is_leapyear(int year) {
     Weisen Sie der Variable `result` den Wert `1` zu, falls `year` ein Schaltjahr ist, und ansonsten `0`.
     */
     /* BEGIN CHANGES */
-
+    if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)))
+    {
+        result = 1;
+    }
+    else
+    {
+        result = 0;
+    }
     /* END CHANGES */
     return result;
 }
 
-int greatest_of_three(int a, int b, int c) {
+int greatest_of_three(int a, int b, int c)
+{
     int result = 0;
     /*
     Aufgabe 2c:
     Weisen Sie der Variable `result` den größten Wert zu, den eine der drei Variablen `a`, `b`, `c` hat.
     */
     /* BEGIN CHANGES */
-    
+    result = a;
+
+    if (b > result)
+    {
+        result = b;
+    }
+
+    if (c > result)
+    {
+        result = c;
+    }
     /* END CHANGES */
     return result;
 }
 
-int least_common_multiple_with_8(int n) {
+int least_common_multiple_with_8(int n)
+{
     int result = 0;
     /*
     Aufgabe 3a:
@@ -108,12 +161,36 @@ int least_common_multiple_with_8(int n) {
     Weisen Sie der Variable 'result' das kleinste gemeinsame Vielfache von 'n' und '8' zu.
     */
     /* BEGIN CHANGES */
-
+    if (n == 0)
+    {
+        result = 0; // KGV mit 0 ist per Definition 0
+    }
+    else if (n % 8 == 0)
+    {
+        // n ist durch 8 teilbar
+        result = n;
+    }
+    else if (n % 4 == 0)
+    {
+        // n ist durch 4 teilbar
+        result = n * 2;
+    }
+    else if (n % 2 == 0)
+    {
+        // n ist durch 2 teilbar
+        result = n * 4;
+    }
+    else
+    {
+        // n ist ungerade
+        result = n * 8;
+    }
     /* END CHANGES */
     return result;
 }
 
-int sum_least_common_multiples_with_8(int n) {
+int sum_least_common_multiples_with_8(int n)
+{
     int result = 0;
     /*
     Aufgabe 3b:
@@ -123,7 +200,29 @@ int sum_least_common_multiples_with_8(int n) {
     'n := 3' der Wert '8 + 8 + 24 = 40'
     */
     /* BEGIN CHANGES */
-
+    for (int i = 1; i <= n; i++)
+    {
+        if (i % 8 == 0)
+        {
+            // i ist durch 8 teilbar
+            result += i;
+        }
+        else if (i % 4 == 0)
+        {
+            // i ist durch 4 teilbar
+            result += i * 2;
+        }
+        else if (i % 2 == 0)
+        {
+            // i ist durch 2 teilbar
+            result += i * 4;
+        }
+        else
+        {
+            // i ist ungerade
+            result += i * 8;
+        }
+    }
     /* END CHANGES */
     return result;
 }
