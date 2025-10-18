@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Fri Oct 17 12:22:24 2025
+# Make data base, printed on Sat Oct 18 12:53:31 2025
 
 # Variables
 
@@ -18,8 +18,6 @@ make: *** No rule to make target `all'.  Stop.
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-NODE_TLS_REJECT_UNAUTHORIZED = undefined
 # environment
 VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # environment
@@ -49,13 +47,11 @@ _ZPLUG_CONFIG_SUBSHELL = :
 # environment
 _ = /usr/bin/make
 # environment
-POSH_SESSION_ID = 747f7e56-f811-440f-8405-cd399aaa094a
-# environment
-VSCODE_PID = 36705
-# environment
-WALLABY_PRODUCTION = true
+POSH_SESSION_ID = ffd5dad7-90ae-4c21-9afc-60973ebd0989
 # makefile
 MAKEFILE_LIST := 
+# environment
+CONSOLE_NINJA_WELCOME_SHOWN = +
 # environment
 ZPLUG_THREADS = 16
 # environment
@@ -73,11 +69,9 @@ HOMEBREW_AUTO_UPDATE_SECS = 1
 # environment
 VSCODE_CWD = /
 # environment
-ATUIN_SESSION = 0199f1ab1c8c7540a34588e8d74dec1a
+ATUIN_SESSION = 0199f6f3e47d7e02aedb9ee6f62078b2
 # environment
 PATH = /opt/homebrew/opt/rustup/bin:/opt/homebrew/opt/llvm/bin:/Users/mahd/.console-ninja/.bin:/Users/mahd/.bun/bin:/opt/homebrew/opt/php@8.2/sbin:/opt/homebrew/opt/php@8.2/bin:/opt/homebrew/Cellar/zplug/2.4.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin/vim:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/mahd/.bun/bin/:/opt/homebrew/opt/ruby/bin:/Applications/OrbStack.app/Contents/MacOS:/Applications/OrbStack.app/Contents/MacOS/bin:/Applications/OrbStack.app/Contents/MacOS/xbin:/Users/mahd/Library/Python/3.9/bin:/Users/mahd/.yarn/bin:/Users/mahd/.config/yarn/global/node_modules/.bin: /opt/homebrew/opt/ccache/libexec:/Applications/Kitty.app/Contents/MacOS:/Applications/Alacritty.app/Contents/MacOS:/Users/mahd/exe/separator:/Users/mahd/exe:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/lib/ruby/gems/3.4.0/bin:/usr/local/bin/composer:/Users/mahd/.config/tmux/plugins/t-smart-tmux-session-manager/bin:/Users/mahd/.tmux/plugins/t-smart-tmux-session-manager/bin:/Users/mahd/go/bin:usr/local/opt/llvm/bin/clangd:/usr/local/Cellar/llvm/10.0.1/bin/clangd:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/MacGPG2/bin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Users/mahd/.rvm/bin:/Applications:/Users/mahd/.lmstudio/bin:/Users/mahd/.orbstack/bin:/usr/local/sbin:/usr/local/go/bin:/Users/mahd/.dotnet/tools:/Volumes/SD200/Applications:/users/mahd/.spicetify:/Users/mahd/.lmstudio/bin
-# environment
-VSCODE_DOTNET_INSTALL_TOOL_ORIGINAL_HOME = /Users/mahd
 # environment
 FPATH = /opt/homebrew/lib/ruby/gems/3.4.0/gems/colorls-1.5.0/zsh:/opt/homebrew/Cellar/zplug/2.4.2/autoload:/opt/homebrew/Cellar/zplug/2.4.2/misc/completions:/opt/homebrew/Cellar/zplug/2.4.2/base/sources:/opt/homebrew/Cellar/zplug/2.4.2/base/utils:/opt/homebrew/Cellar/zplug/2.4.2/base/job:/opt/homebrew/Cellar/zplug/2.4.2/base/log:/opt/homebrew/Cellar/zplug/2.4.2/base/io:/opt/homebrew/Cellar/zplug/2.4.2/base/core:/opt/homebrew/Cellar/zplug/2.4.2/base/base:/opt/homebrew/Cellar/zplug/2.4.2/autoload/commands:/opt/homebrew/Cellar/zplug/2.4.2/autoload/options:/opt/homebrew/Cellar/zplug/2.4.2/autoload/tags:/opt/homebrew/share/zsh/site-functions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.9/functions:/Applications/OrbStack.app/Contents/MacOS/../Resources/completions/zsh
 # environment
@@ -251,9 +245,9 @@ VIRTUAL_ENV_DISABLE_PROMPT = 1
 # environment
 DOCKER_HOST = unix:///var/run/docker.sock
 # environment
-APPLICATIONINSIGHTS_CONFIGURATION_CONTENT = {}
+VSCODE_PID = 4804
 # variable set hash-table stats:
-# Load=119/1024=12%, Rehash=0, Collisions=11/140=8%
+# Load=116/1024=11%, Rehash=0, Collisions=10/137=7%
 
 # Pattern-specific Variable Values
 
@@ -261,9 +255,9 @@ APPLICATIONINSIGHTS_CONFIGURATION_CONTENT = {}
 
 # Directories
 
-# . (device 16777229, inode 68421093): 19 files, no impossibilities.
+# . (device 16777229, inode 68421093): 21 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 21 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -335,6 +329,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Fri Oct 17 12:22:24 2025
+# Finished Make data base on Sat Oct 18 12:53:31 2025
 
  

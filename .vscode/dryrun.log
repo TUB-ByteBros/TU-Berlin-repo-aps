@@ -1,6 +1,6 @@
-make --dry-run --keep-going --print-directory
+make all --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/mahd/DEV/TU-Berlin-repo-aps'
 make: Leaving directory `/Users/mahd/DEV/TU-Berlin-repo-aps'
  
-make: *** No targets specified and no makefile found.  Stop.
+make: *** No rule to make target `all'.
 
