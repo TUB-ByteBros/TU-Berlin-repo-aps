@@ -6,11 +6,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
-make: *** No rule to make target `all'.  Stop.
 
-
-# Make data base, printed on Sat Oct 18 12:53:31 2025
+# Make data base, printed on Sat Oct 18 21:52:51 2025
 
 # Variables
 
@@ -26,6 +23,8 @@ CRYPTOGRAPHY_OPENSSL_NO_LEGACY = 1
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
 CPPFLAGS = -I/opt/homebrew/opt/llvm/include: -I/opt/homebrew/opt/ruby/include
+# environment
+BREW_PREFIX = /opt/homebrew
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
@@ -47,7 +46,7 @@ _ZPLUG_CONFIG_SUBSHELL = :
 # environment
 _ = /usr/bin/make
 # environment
-POSH_SESSION_ID = ffd5dad7-90ae-4c21-9afc-60973ebd0989
+POSH_SESSION_ID = 45fdd04f-5484-4e01-8190-9445d57bcbf8
 # makefile
 MAKEFILE_LIST := 
 # environment
@@ -69,17 +68,15 @@ HOMEBREW_AUTO_UPDATE_SECS = 1
 # environment
 VSCODE_CWD = /
 # environment
-ATUIN_SESSION = 0199f6f3e47d7e02aedb9ee6f62078b2
+ATUIN_SESSION = 0199f8e1ad727710b017b3807c1283db
 # environment
-PATH = /opt/homebrew/opt/rustup/bin:/opt/homebrew/opt/llvm/bin:/Users/mahd/.console-ninja/.bin:/Users/mahd/.bun/bin:/opt/homebrew/opt/php@8.2/sbin:/opt/homebrew/opt/php@8.2/bin:/opt/homebrew/Cellar/zplug/2.4.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin/vim:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/mahd/.bun/bin/:/opt/homebrew/opt/ruby/bin:/Applications/OrbStack.app/Contents/MacOS:/Applications/OrbStack.app/Contents/MacOS/bin:/Applications/OrbStack.app/Contents/MacOS/xbin:/Users/mahd/Library/Python/3.9/bin:/Users/mahd/.yarn/bin:/Users/mahd/.config/yarn/global/node_modules/.bin: /opt/homebrew/opt/ccache/libexec:/Applications/Kitty.app/Contents/MacOS:/Applications/Alacritty.app/Contents/MacOS:/Users/mahd/exe/separator:/Users/mahd/exe:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/lib/ruby/gems/3.4.0/bin:/usr/local/bin/composer:/Users/mahd/.config/tmux/plugins/t-smart-tmux-session-manager/bin:/Users/mahd/.tmux/plugins/t-smart-tmux-session-manager/bin:/Users/mahd/go/bin:usr/local/opt/llvm/bin/clangd:/usr/local/Cellar/llvm/10.0.1/bin/clangd:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/MacGPG2/bin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Users/mahd/.rvm/bin:/Applications:/Users/mahd/.lmstudio/bin:/Users/mahd/.orbstack/bin:/usr/local/sbin:/usr/local/go/bin:/Users/mahd/.dotnet/tools:/Volumes/SD200/Applications:/users/mahd/.spicetify:/Users/mahd/.lmstudio/bin
+PATH = /opt/homebrew/opt/rustup/bin:/opt/homebrew/opt/llvm/bin:/Users/mahd/.console-ninja/.bin:/Users/mahd/.bun/bin:/opt/homebrew/opt/php@8.2/sbin:/opt/homebrew/opt/php@8.2/bin:/opt/homebrew/Cellar/zplug/2.4.2/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin/vim:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/mahd/.bun/bin/:/opt/homebrew/opt/ruby/bin:/Applications/OrbStack.app/Contents/MacOS:/Applications/OrbStack.app/Contents/MacOS/bin:/Applications/OrbStack.app/Contents/MacOS/xbin:/Users/mahd/Library/Python/3.9/bin:/Users/mahd/.yarn/bin:/Users/mahd/.config/yarn/global/node_modules/.bin: /opt/homebrew/opt/ccache/libexec:/Applications/Kitty.app/Contents/MacOS:/Applications/Alacritty.app/Contents/MacOS:/Users/mahd/exe/separator:/Users/mahd/exe:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/lib/ruby/gems/3.4.0/bin:/usr/local/bin/composer:/Users/mahd/.config/tmux/plugins/t-smart-tmux-session-manager/bin:/Users/mahd/.tmux/plugins/t-smart-tmux-session-manager/bin:/Users/mahd/go/bin:usr/local/opt/llvm/bin/clangd:/usr/local/Cellar/llvm/10.0.1/bin/clangd:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/usr/local/MacGPG2/bin:/Applications/VMware Fusion.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Users/mahd/.rvm/bin:/Applications:/Users/mahd/.lmstudio/bin:/Users/mahd/.orbstack/bin:/usr/local/sbin:/usr/local/go/bin:/Users/mahd/.dotnet/tools:/Volumes/SD200/Applications:/users/mahd/.spicetify:/Users/mahd/.lmstudio/bin
 # environment
 FPATH = /opt/homebrew/lib/ruby/gems/3.4.0/gems/colorls-1.5.0/zsh:/opt/homebrew/Cellar/zplug/2.4.2/autoload:/opt/homebrew/Cellar/zplug/2.4.2/misc/completions:/opt/homebrew/Cellar/zplug/2.4.2/base/sources:/opt/homebrew/Cellar/zplug/2.4.2/base/utils:/opt/homebrew/Cellar/zplug/2.4.2/base/job:/opt/homebrew/Cellar/zplug/2.4.2/base/log:/opt/homebrew/Cellar/zplug/2.4.2/base/io:/opt/homebrew/Cellar/zplug/2.4.2/base/core:/opt/homebrew/Cellar/zplug/2.4.2/base/base:/opt/homebrew/Cellar/zplug/2.4.2/autoload/commands:/opt/homebrew/Cellar/zplug/2.4.2/autoload/options:/opt/homebrew/Cellar/zplug/2.4.2/autoload/tags:/opt/homebrew/share/zsh/site-functions:/usr/local/share/zsh/site-functions:/usr/share/zsh/site-functions:/usr/share/zsh/5.9/functions:/Applications/OrbStack.app/Contents/MacOS/../Resources/completions/zsh
 # environment
 ZPLUG_HOME = /opt/homebrew/opt/zplug
 # environment
 ZPLUG_CACHE_DIR = /opt/homebrew/opt/zplug/cache
-# environment
-LaunchInstanceID = 8AAD6418-8DDE-4E5E-B0CB-7B2D3438AA70
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
@@ -89,7 +86,7 @@ ANDROID_HOME = /Volumes/SD200/Library/Android/sdk
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.6KpSNrfjoQ/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.eiPTMnNvDk/Listeners
 # automatic
 %F = $(notdir $%)
 # default
@@ -157,8 +154,6 @@ ZLE_RPROMPT_INDENT = 0
 # makefile
 .DEFAULT_GOAL := 
 # environment
-APPLICATION_INSIGHTS_NO_STATSBEAT = true
-# environment
 CLASSPATH = :/Library/Java/Extensions/mariadb-java-client-2.2.6.jar
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
@@ -207,6 +202,8 @@ __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x3
 # environment
 COMMAND_MODE = unix2003
 # environment
+VCPKG_ROOT = /Users/mahd/DEV/vcpkg
+# environment
 ZPLUG_ROOT = /opt/homebrew/Cellar/zplug/2.4.2
 # environment
 PKG_CONFIG_PATH = /opt/homebrew/opt/ruby/lib/pkgconfig:
@@ -220,8 +217,6 @@ LC_ALL = C
 PYENV_VIRTUALENV_DISABLE_PROMPT = 1
 # environment
 _ZPLUG_OHMYZSH = robbyrussell/oh-my-zsh
-# environment
-SECURITYSESSIONID = 186b7
 # automatic
 ^F = $(notdir $^)
 # environment
@@ -245,9 +240,9 @@ VIRTUAL_ENV_DISABLE_PROMPT = 1
 # environment
 DOCKER_HOST = unix:///var/run/docker.sock
 # environment
-VSCODE_PID = 4804
+VSCODE_PID = 89596
 # variable set hash-table stats:
-# Load=116/1024=11%, Rehash=0, Collisions=10/137=7%
+# Load=115/1024=11%, Rehash=0, Collisions=10/136=7%
 
 # Pattern-specific Variable Values
 
@@ -255,7 +250,7 @@ VSCODE_PID = 4804
 
 # Directories
 
-# . (device 16777229, inode 68421093): 21 files, no impossibilities.
+# . (device 16777231, inode 68421093): 21 files, no impossibilities.
 
 # 21 files, no impossibilities in 1 directories.
 
@@ -329,6 +324,8 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sat Oct 18 12:53:31 2025
+# Finished Make data base on Sat Oct 18 21:52:51 2025
 
  
+make: *** No rule to make target `all'.  Stop.
+
