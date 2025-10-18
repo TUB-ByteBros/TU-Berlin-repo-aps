@@ -49,8 +49,8 @@ this is header-only library for making build-scripts using C.
 * 2025-10-15
   the third lesson with more fundamentals and the first group of exercises and practicing tasks
 
-  - [[2025-10-14/01_Aufgaben/01ex.c][File: 01ex.c]]
-  - [[2025-10-14/01_Uebungen/01practice.c][File: 01practice.c]]
+  - [[2025-10-15/02_Aufgaben/02ex.c][File: 02ex.c]]
+  - [[2025-10-15/02_Uebungen/02practice.c][File: 02practice.c]]
 
 * 2025-10-16
   the fourth lesson with more fundamentals and the third group of exercises and practicing tasks
