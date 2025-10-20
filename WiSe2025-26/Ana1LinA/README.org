@@ -1,0 +1,18 @@
+#+title: Analisys 1 und Lineare Algebra
+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
+#+description:https://mcpeapsunterstrichhd.dev/linkhub
+#+startup: showeverything
+#+options: toc:2
+
+* Table of Contents :toc:
+- [[#2025-10-15][2025-10-15]]
+  - [[#grundlagen-der-mengenlehre][Grundlagen der Mengenlehre]]
+- [[#2025-10-20][2025-10-20]]
+
+* 2025-10-15
+
+** Grundlagen der Mengenlehre
+
+* 2025-10-20
+
+**
