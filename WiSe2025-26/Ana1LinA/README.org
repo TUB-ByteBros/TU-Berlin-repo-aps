@@ -8,6 +8,7 @@ author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
 - [[#2025-10-15][2025-10-15]]
   - [[#grundlagen-der-mengenlehre][Grundlagen der Mengenlehre]]
 - [[#2025-10-20][2025-10-20]]
+  - [[#zahlen][Zahlen]]
 
 * 2025-10-15
 
@@ -15,4 +16,4 @@ author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
 
 * 2025-10-20
 
-**
+** Zahlen
