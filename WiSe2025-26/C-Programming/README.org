@@ -14,6 +14,7 @@
 - [[#2025-10-15][2025-10-15]]
 - [[#2025-10-16][2025-10-16]]
 - [[#2025-10-17][2025-10-17]]
+- [[#2025-10-20][2025-10-20]]
 
 * Default
   This is a simple Hello World program in C using nob.h to build and run the program.
@@ -63,3 +64,9 @@ this is header-only library for making build-scripts using C.
 
   - [[2025-10-17/04_Aufgaben/04ex.c][File: 04ex.c]]
   - [[2025-10-17/04_Uebungen/04practice.c][File: 04practice.c]]
+
+* 2025-10-20
+  the sixth lesson with more fundamentals and the fifth group of exercises and practicing tasks
+
+  - [[2025-10-20/05_Aufgaben/05ex.c][File: 05ex.c]]
+  - [[2025-10-20/05_Uebungen/05practice.c][File: 05practice.c]]
