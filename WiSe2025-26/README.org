@@ -1,0 +1,19 @@
+#+title: Winter Semester 2025/2026
+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
+#+description:https://mcpeapsunterstrichhd.dev/linkhub
+#+startup: showeverything
+#+options: toc:2
+
+* Table of Contents :toc:
+- [[#analysis-1-und-lineare-algebra][Analysis 1 und Lineare Algebra]]
+- [[#introduction-to-programing][Introduction to Programing]]
+
+* Analysis 1 und Lineare Algebra
+
+  * [[Ana1LinA][Ordner von Modul]]
+
+* Introduction to Programing
+
+Das Modul zur Programmierung Einstieg mit C/C++
+
+  * [[IntroProg][Ordner von Modul]]
