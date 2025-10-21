@@ -1,4 +1,4 @@
-#+title: ALL my C-Programs
+#+title: Introduction to Programing
 #+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
 #+description:https://mcpeapsunterstrichhd.dev/linkhub
 #+startup: showeverything
