@@ -62,30 +62,25 @@ Färben Sie alle Pixel wie in der 'right_triangle'-Übung, aber benutzen Sie die
 die Pixel der direkt aneinander grenzenden Kanten der entstehenden Dreiecke.
 */
 Canvas antialiased_right_triangle(Canvas c, RGB color1, RGB color2) {
-    // Berechne die Mischfarbe
-    RGB mixed;
-    mixed.r = (color1.r + color2.r) / 2.0f;
-    mixed.g = (color1.g + color2.g) / 2.0f;
-    mixed.b = (color1.b + color2.b) / 2.0f;
+    RGB mixed = mix_colors(color1, color2);
 
-    // Färbe alle Pixel
     for (int y = 0; y < canvas_height(c); y++) {
         for (int x = 0; x < canvas_width(c); x++) {
             if (x == y) {
-                // Diagonale: Mischfarbe
-                c = canvas_set_r(c, x, y, mixed.r);
-                c = canvas_set_g(c, x, y, mixed.g);
-                c = canvas_set_b(c, x, y, mixed.b);
-            } else if (x < y) {
-                // x < y: color1
-                c = canvas_set_r(c, x, y, color1.r);
-                c = canvas_set_g(c, x, y, color1.g);
-                c = canvas_set_b(c, x, y, color1.b);
+                // Auf der Diagonale: Mischfarbe
+                canvas_set_r(c, x, y, mixed.r);
+                canvas_set_g(c, x, y, mixed.g);
+                canvas_set_b(c, x, y, mixed.b);
+            } else if (x <= y) {
+                // x <= y (aber nicht x == y): color1
+                canvas_set_r(c, x, y, color1.r);
+                canvas_set_g(c, x, y, color1.g);
+                canvas_set_b(c, x, y, color1.b);
             } else {
                 // x > y: color2
-                c = canvas_set_r(c, x, y, color2.r);
-                c = canvas_set_g(c, x, y, color2.g);
-                c = canvas_set_b(c, x, y, color2.b);
+                canvas_set_r(c, x, y, color2.r);
+                canvas_set_g(c, x, y, color2.g);
+                canvas_set_b(c, x, y, color2.b);
             }
         }
     }

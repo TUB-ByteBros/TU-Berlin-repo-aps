@@ -73,7 +73,7 @@ int main(int argc, char **argv)
 
   flag_bool_var(&help, "-help", false, "Print this help");
   flag_bool_var(&help, "h", false, "Print this help");
-  flag_bool_var(&rrun_ex, "rex", false, "Run Exercise");
+  flag_bool_var(&run_ex, "rex", false, "Run Exercise");
   flag_bool_var(&run_ex, "-run_ex", false, "Run Exercise");
   flag_bool_var(&build_ex, "bex", false, "Build Exercise");
   flag_bool_var(&build_ex, "-build_ex", false, "Build Exercise");
