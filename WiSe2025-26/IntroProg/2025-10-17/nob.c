@@ -60,31 +60,26 @@ int main(int argc, char **argv)
   EX_TEST_C = temp_sprintf("%s/%02dex_test.c", EX_DIR, group);
 
   bool help = false;
-  bool hhelp = false;
 
   bool run_ex = false;
-  bool rrun_ex = false;
 
   bool run_practice = false;
-  bool rrun_practice = false;
 
   bool build_ex = false;
-  bool bbuild_ex = false;
 
   bool build_practice = false;
-  bool bbuild_practice = false;
 
   bool clean = false;
 
   flag_bool_var(&help, "-help", false, "Print this help");
-  flag_bool_var(&hhelp, "h", false, "Print this help");
+  flag_bool_var(&help, "h", false, "Print this help");
   flag_bool_var(&rrun_ex, "rex", false, "Run Exercise");
   flag_bool_var(&run_ex, "-run_ex", false, "Run Exercise");
-  flag_bool_var(&bbuild_ex, "bex", false, "Build Exercise");
+  flag_bool_var(&build_ex, "bex", false, "Build Exercise");
   flag_bool_var(&build_ex, "-build_ex", false, "Build Exercise");
-  flag_bool_var(&rrun_practice, "rpr", false, "Run Practice");
+  flag_bool_var(&run_practice, "rpr", false, "Run Practice");
   flag_bool_var(&run_practice, "-run_pr", false, "Run Practice");
-  flag_bool_var(&bbuild_practice, "bpr", false, "Build Practice");
+  flag_bool_var(&build_practice, "bpr", false, "Build Practice");
   flag_bool_var(&build_practice, "-build_pr", false, "Build Practice");
   flag_bool_var(&clean, "-clean", false, "Clean build directory");
 
@@ -98,13 +93,13 @@ int main(int argc, char **argv)
   argc = flag_rest_argc();
   argv = flag_rest_argv();
 
-  if (help || hhelp)
+  if (help)
   {
     usage(stdout);
     exit(0);
   }
 
-  if (build_ex || bbuild_ex)
+  if (build_ex)
   {
 
     if (!nob_mkdir_if_not_exists(BUILD_DIR))
@@ -119,7 +114,7 @@ int main(int argc, char **argv)
     cmd.count = 0;
   }
 
-  if (build_practice || bbuild_practice)
+  if (build_practice)
   {
 
     if (!nob_mkdir_if_not_exists(BUILD_DIR))
@@ -134,7 +129,7 @@ int main(int argc, char **argv)
     cmd.count = 0;
   }
 
-  if (run_ex || rrun_ex)
+  if (run_ex)
   {
     set_current_dir(BUILD_DIR);
     cmd_append(&cmd, temp_sprintf("./%s", EX_TEST));
@@ -144,7 +139,7 @@ int main(int argc, char **argv)
     set_current_dir("..");
   }
 
-  if (run_practice || rrun_practice)
+  if (run_practice)
   {
     set_current_dir(BUILD_DIR);
     cmd_append(&cmd, temp_sprintf("./%s", PRACTICE_TEST));
