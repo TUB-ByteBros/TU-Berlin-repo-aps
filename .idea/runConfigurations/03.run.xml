@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="03" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile">
-    <makefile filename="$PROJECT_DIR$/WiSe2025-26/C-Programming/2025-10-16/Makefile" target="all" workingDirectory="$PROJECT_DIR$/WiSe2025-26/C-Programming/2025-10-16" arguments="">
+    <makefile filename="$PROJECT_DIR$/WiSe2025-26/IntroProg/2025-10-16/Makefile" target="all" workingDirectory="$PROJECT_DIR$/WiSe2025-26/IntroProg/2025-10-16" arguments="">
       <envs />
     </makefile>
     <method v="2" />

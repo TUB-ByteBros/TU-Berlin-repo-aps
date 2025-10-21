@@ -36,6 +36,14 @@ Aber Vorsicht: bei Division auf `int`s wird immer zur Null abgerundet, während 
 Hilfsfunktion `float normalize(int value, int max)` ? :-) )
 */
 Canvas swatch_red_green(Canvas c) {
+    for (int y = 0; y < canvas_height(c); y++) {
+        for (int x = 0; x < canvas_width(c); x++) {
+            float red = (float)x / (canvas_width(c) - 1);
+            float green = (float)y / (canvas_height(c) - 1);
+            canvas_set_r(c, x, y, red);
+            canvas_set_g(c, x, y, green);
+        }
+    }
     return c;
 }
 
@@ -55,6 +63,17 @@ Schreiben Sie die Funktion so, dass der jeweils richtige `channel` des Pixels mi
 erhält.
 */
 Canvas canvas_set_channel(Canvas c, int x, int y, ColorChannel channel, float v) {
+    switch (channel) {
+        case Red:
+            canvas_set_r(c, x, y, v);
+            break;
+        case Green:
+            canvas_set_g(c, x, y, v);
+            break;
+        case Blue:
+            canvas_set_b(c, x, y, v);
+            break;
+    }
     return c;
 }
 
@@ -68,6 +87,14 @@ Alle nicht in den Parametern angegeben Farbkanäle sollen unverändert bleiben.
 Setzten Sie _erst_ den Farbkanal `channel_x`, und _danach_ `channel_y`. Bonusdenkaufgabe: in welchen Fällen ist die Reihenfolge relevant?
 */
 Canvas swatch_rgb(Canvas c, ColorChannel channel_x, ColorChannel channel_y) {
+    for (int y = 0; y < canvas_height(c); y++) {
+        for (int x = 0; x < canvas_width(c); x++) {
+            float value_x = (float)x / (canvas_width(c) - 1);
+            float value_y = (float)y / (canvas_height(c) - 1);
+            canvas_set_channel(c, x, y, channel_x, value_x);
+            canvas_set_channel(c, x, y, channel_y, value_y);
+        }
+    }
     return c;
 }
 
@@ -91,9 +118,9 @@ Flieder wäre dann z.B. (rot 219, grün 209, blau 255).
 */
 RGB lilac() {
     RGB color;
-    color.r = 0.0;
-    color.g = 0.0;
-    color.b = 0.0;
+    color.r = 0.86;
+    color.g = 0.82;
+    color.b = 1.0f;
     return color;
 }
 
@@ -104,6 +131,9 @@ Kanäle gleichzeitig ansteuern!
 Setzen Sie die Farbe des Pixels mit Koordinate `(x, y)` auf die von `color` repräsentierte Farbe.
 */
 Canvas canvas_set_rgb_struct(Canvas c, int x, int y, RGB color) {
+    canvas_set_r(c, x, y, color.r);
+    canvas_set_g(c, x, y, color.g);
+    canvas_set_b(c, x, y, color.b);
     return c;
 }
 
@@ -115,6 +145,10 @@ und den Blauwert mit 0.1140 multipliziert, und die Resultate addiert.
 Der Grauton mit dieser Helligkeit setzt alle drei Farbkanäle auf diesen Wert.
 */
 RGB rgb_to_gray(RGB color) {
+    float gray = color.r * 0.2989f + color.g * 0.587f + color.b * 0.1140f;
+    color.r = gray;
+    color.g = gray;
+    color.b = gray;
     return color;
 }
 
@@ -129,5 +163,15 @@ Funktionen in einer Hilfsfunktion zusammenfassen welche die Farbe an der gegeben
 Wert vom Typ `RGB` zurück gibt.
 */
 Canvas canvas_to_gray(Canvas c) {
+    for (int y = 0; y < canvas_height(c); y++) {
+        for (int x = 0; x < canvas_width(c); x++) {
+            RGB color;
+            color.r = canvas_get_r(c, x, y);
+            color.g = canvas_get_g(c, x, y);
+            color.b = canvas_get_b(c, x, y);
+            RGB gray_color = rgb_to_gray(color);
+            canvas_set_rgb_struct(c, x, y, gray_color);
+        }
+    }
     return c;
 }
