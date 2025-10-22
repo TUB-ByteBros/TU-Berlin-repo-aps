@@ -74,12 +74,12 @@ this is header-only library for making build-scripts using C.
   - [[2025-10-20/05_Uebungen/05practice.c][File: 05practice.c]]
 
 * 2025-10-21
-  the sixth lesson with more fundamentals and the sixth group of exercises and practicing tasks
+  the seventh lesson with more fundamentals and the sixth group of exercises and practicing tasks
 
   - [[2025-10-21/06_Aufgaben/06ex.c][File: 06ex.c]]
   - [[2025-10-21/06_Uebungen/06practice.c][File: 06practice.c]]
 
 * 2025-10-22
-  the sixth lesson with more fundamentals and the seventh group of exercises and practicing tasks
+  the eightth lesson with more fundamentals and the seventh group of exercises and practicing tasks
 
   - [[2025-10-22/07_Aufgaben/05ex.c][File: 07ex.c]]
