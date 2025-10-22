@@ -16,7 +16,7 @@ Cmd cmd = {0};
 
 MY_Flags_args ARGS = {0};
 
-int group = 5;
+int group = 7;
 
 char *BUILD_DIR = "./build";
 char *PRACTICE_DIR;
@@ -63,11 +63,11 @@ int main(int argc, char **argv)
 
   bool run_ex = false;
 
-  bool run_practice = false;
+  //bool run_practice = false;
 
   bool build_ex = false;
 
-  bool build_practice = false;
+  //bool build_practice = false;
 
   bool clean = false;
 
@@ -77,10 +77,10 @@ int main(int argc, char **argv)
   flag_bool_var(&run_ex, "-run_ex", false, "Run Exercise");
   flag_bool_var(&build_ex, "bex", false, "Build Exercise");
   flag_bool_var(&build_ex, "-build_ex", false, "Build Exercise");
-  flag_bool_var(&run_practice, "rpr", false, "Run Practice");
-  flag_bool_var(&run_practice, "-run_pr", false, "Run Practice");
-  flag_bool_var(&build_practice, "bpr", false, "Build Practice");
-  flag_bool_var(&build_practice, "-build_pr", false, "Build Practice");
+  //flag_bool_var(&run_practice, "rpr", false, "Run Practice");
+  //flag_bool_var(&run_practice, "-run_pr", false, "Run Practice");
+  //flag_bool_var(&build_practice, "bpr", false, "Build Practice");
+  //flag_bool_var(&build_practice, "-build_pr", false, "Build Practice");
   flag_bool_var(&clean, "-clean", false, "Clean build directory");
 
   if (!flag_parse(ARGS.count, ARGS.items))
@@ -114,7 +114,7 @@ int main(int argc, char **argv)
     cmd.count = 0;
   }
 
-  if (build_practice)
+  /*if (build_practice)
   {
 
     if (!nob_mkdir_if_not_exists(BUILD_DIR))
@@ -127,7 +127,7 @@ int main(int argc, char **argv)
     if (!cmd_run(&cmd))
       return 1;
     cmd.count = 0;
-  }
+  }*/
 
   if (run_ex)
   {
@@ -139,7 +139,7 @@ int main(int argc, char **argv)
     set_current_dir("..");
   }
 
-  if (run_practice)
+  /*if (run_practice)
   {
     set_current_dir(BUILD_DIR);
     cmd_append(&cmd, temp_sprintf("./%s", PRACTICE_TEST));
@@ -147,7 +147,7 @@ int main(int argc, char **argv)
       return 1;
     cmd.count = 0;
     set_current_dir("..");
-  }
+  }*/
 
   if (clean)
   {

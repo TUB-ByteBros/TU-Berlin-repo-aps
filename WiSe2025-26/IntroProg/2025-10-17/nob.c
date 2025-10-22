@@ -39,7 +39,7 @@ void cmd_cc()
 
 void usage(FILE *stream)
 {
-  fprintf(stream, "Usage: ./example [OPTIONS] [--] [ARGS]\n");
+  fprintf(stream, "Usage: %s [OPTIONS]\n", flag_name());
   fprintf(stream, "OPTIONS:\n");
   flag_print_options(stream);
 }
