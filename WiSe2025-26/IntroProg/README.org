@@ -83,10 +83,3 @@ this is header-only library for making build-scripts using C.
   the eightth lesson with more fundamentals and the seventh group of exercises and practicing tasks
 
   - [[2025-10-22/07_Aufgaben/05ex.c][File: 07ex.c]]
-
-    src_c[07ex.c]{
-    #include <stdio>
-    int main() {
-    printf("Hello World\n");
-    return 69;
-  }}
