@@ -1381,7 +1381,6 @@ qrc_*.cpp
 ui_*.h
 *.qmlc
 *.jsc
-Makefile*
 *build-*
 *.qm
 *.prl
@@ -3208,7 +3207,7 @@ inc/
 /blib/
 /_eumm/
 /*.gz
-/Makefile
+
 /Makefile.old
 /MANIFEST.bak
 /pm_to_blib
@@ -3986,7 +3985,6 @@ sam.yaml
 #build and release folders
 */CMakeFiles
 */CMakeCache.txt
-*/Makefile
 */cmake_install.cmake
 
 ### JDeveloper template
@@ -4415,7 +4413,7 @@ cython_debug/
 ### OpenFOAM template
 # Timestep directories
 0.*
-[1-9]*
+#[1-9]*
 
 # Fields that must get ignored
 */phi*
