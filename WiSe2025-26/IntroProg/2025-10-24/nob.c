@@ -15,7 +15,7 @@ Cmd           cmd       = { 0 };
 
 MY_Flags_args ARGS      = { 0 };
 
-int           group     = 7;
+int           group     = 9;
 
 char         *BUILD_DIR = "./build";
 char         *PRACTICE_DIR;
