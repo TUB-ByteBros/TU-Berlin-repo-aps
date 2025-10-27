@@ -7,6 +7,7 @@
 * Table of Contents :toc:
 - [[#analysis-1-und-lineare-algebra][Analysis 1 und Lineare Algebra]]
 - [[#introduction-to-programing][Introduction to Programing]]
+- [[#rechnerorgination][Rechnerorgination]]
 
 * Analysis 1 und Lineare Algebra
 
@@ -17,3 +18,9 @@
 Das Modul zur Programmierung Einstieg mit C/C++
 
   * [[IntroProg][Ordner von Modul]]
+
+* Rechnerorgination
+
+Grundlagen der Hardware
+
+ * [[ROrg][Ordner vom Modul]]
