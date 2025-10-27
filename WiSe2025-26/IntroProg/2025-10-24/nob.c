@@ -127,7 +127,7 @@ int main( int argc, char **argv ) {
 
   if ( run_ex ) {
     set_current_dir( BUILD_DIR );
-    cmd_append( &cmd, temp_sprintf( "./%s", EX_TEST ) );
+    cmd_append( &cmd,"leaks", "--atExit", "--", temp_sprintf( "./%s", EX_TEST ) );
     if ( !cmd_run( &cmd ) ) {
       return 1;
     }

@@ -28,7 +28,13 @@ Tipp: Ein Pointer direkt auf `x` ist nicht gültig. Warum?
 */
 uint32_t *return_pointer(uint32_t x)
 {
-    return NULL;
+    uint32_t *ptr = (uint32_t *)malloc(sizeof(uint32_t));
+    if (ptr == NULL) {
+        // Fehler bei der Speicherallokation
+        return NULL;
+    }
+    *ptr = x;
+    return ptr;
 }
 
 /*
@@ -38,8 +44,9 @@ Tipp: Nach dem Aufruf von `free` darf der Pointer nicht mehr dereferenziert werd
 */
 uint32_t free_pointer(uint32_t *x)
 {
+    uint32_t value = *x;
     free(x);
-    return 0;
+    return value;
 }
 
 /*
@@ -145,7 +152,7 @@ Geben Sie einen Pfannkuchenhaufen zurück, dessen einzige Schicht eine Fruchtsch
 */
 PileOfPancakes pure_fruit()
 {
-    PileOfPancakes p = {.layer = ActualPancake, .further_layers = NULL};
+    PileOfPancakes p = {.layer = Fruit, .further_layers = NULL};
     return p;
 }
 
@@ -156,7 +163,12 @@ Der Testcode wird `free` auf diesem Pointer aufrufen.
 */
 PileOfPancakes *pure_fruit_ptr()
 {
-    return NULL;
+  PileOfPancakes *p = (PileOfPancakes *)malloc(sizeof(PileOfPancakes));
+  if (p == NULL) {
+      return NULL; // malloc fehlgeschlagen
+  }
+    *p = (PileOfPancakes){.layer = Fruit, .further_layers = NULL};
+    return p;
 }
 
 /*
@@ -166,7 +178,19 @@ Der Testcode wird `free` auf diesem Pointer aufrufen.
 */
 PileOfPancakes *fruit_crepe_ptr()
 {
-    return NULL;
+    PileOfPancakes *p = (PileOfPancakes *)malloc(sizeof(PileOfPancakes));
+    if (p == NULL) {
+        return NULL; // malloc fehlgeschlagen
+    }
+    PileOfPancakes *further_layer = (PileOfPancakes *)malloc(sizeof(PileOfPancakes));
+    if (further_layer == NULL) {
+        free(p);
+        return NULL; // malloc fehlgeschlagen
+    }
+    *further_layer = (PileOfPancakes){.layer = Fruit, .further_layers = NULL};
+    *p = (PileOfPancakes){.layer = ActualPancake, .further_layers = further_layer};
+
+    return p;
 }
 
 /*
@@ -175,8 +199,42 @@ Erstellen Sie einen Pfannkuchen aus genau `n` Schichten Teigfladen (`n` ist mind
 */
 PileOfPancakes mille_crepes(uint32_t n)
 {
-    PileOfPancakes p = {.layer = ActualPancake, .further_layers = NULL};
-    return p;
+    if (n == 0) {
+        return (PileOfPancakes){.layer = ActualPancake, .further_layers = NULL};
+    }
+
+    // Erste Schicht erstellen
+    PileOfPancakes *p = (PileOfPancakes *)malloc(sizeof(PileOfPancakes));
+    if (p == NULL) {
+        return (PileOfPancakes){.layer = ActualPancake, .further_layers = NULL};
+    }
+    *p = (PileOfPancakes){.layer = ActualPancake, .further_layers = NULL};
+
+    // Weitere Schichten hinzufügen
+    for (uint32_t i = 1; i < n; i++) {
+        PileOfPancakes *new_layer = (PileOfPancakes *)malloc(sizeof(PileOfPancakes));
+        if (new_layer == NULL) {
+            // Speicherlecks vermeiden
+            PileOfPancakes *current = p;
+            while (current != NULL) {
+                PileOfPancakes *temp = current->further_layers;
+                free(current);
+                current = temp;
+            }
+            return (PileOfPancakes){.layer = ActualPancake, .further_layers = NULL};
+        }
+        new_layer->layer = ActualPancake;
+        new_layer->further_layers = p;
+        p = new_layer;
+    }
+
+    PileOfPancakes result = *p;
+    free(p);
+
+    // Warnung: Dies führt zu Memory Leaks, da die weiteren Schichten nicht freigegeben werden
+    // Das ist eine Designeinschränkung der Funktion
+
+    return result;
 }
 
 /*
@@ -213,5 +271,14 @@ Hinweis: Wir starten bei `1`.
 */
 uint16_t *create_dynamic_array(size_t x)
 {
-    return NULL;
+    uint16_t *array = malloc(x * sizeof(uint16_t));
+    if (array == NULL)
+    {
+        return NULL; // malloc fehlgeschlagen
+    }
+    for (size_t i = 1; i <= x; i++)
+    {
+        array[i - 1] = i * i;
+    }
+    return array;
 }

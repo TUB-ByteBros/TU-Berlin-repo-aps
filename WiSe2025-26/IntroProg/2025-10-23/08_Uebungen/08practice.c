@@ -17,7 +17,13 @@ Auf diesem Blatt geht es um Arrays.
 Geben Sie die kleinste Zahl im Eingabearray zurück.
 */
 uint16_t get_minimum(uint16_t numbers[], size_t numbers_len) {
-    return 0;
+    uint16_t min = numbers[0];
+    for (size_t i = 1; i < numbers_len; i++) {
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
+    }
+    return min;
 }
 
 /*
@@ -25,7 +31,12 @@ Geben Sie einen Pointer auf das erste Vorkommen der Zahl `7` im Eingabearray zur
 nicht vorkommt.
 */
 uint16_t *find_seven(uint16_t numbers[], size_t numbers_len) {
-    return numbers;
+    for (size_t i = 0; i < numbers_len; i++) {
+        if (numbers[i] == 7) {
+            return &numbers[i];
+        }
+    }
+    return NULL;
 }
 
 /*
@@ -33,6 +44,9 @@ Schreiben Sie einen Countdown in das gegebene Array `numbers`.
 Bespiel: ist `numbers_len` drei, sollte das Array am Ende die Werte 2, 1, und 0 enthalten (in dieser Reihenfolge).
 */
 void countdown(uint16_t numbers[], size_t numbers_len) {
+   for (size_t i = 0; i  < numbers_len; i++) {
+        numbers[i] = numbers_len - 1 - i;
+}
     return;
 }
 
@@ -56,7 +70,7 @@ repräsentiert.
 Geben Sie den Wert an der Koordinate (x, y) zurück.
 */
 uint16_t get_value(uint16_t arr[], size_t width, size_t height, size_t x, size_t y) {
-    return 0;
+    return arr[y * width + x];
 }
 
 /*
@@ -64,8 +78,43 @@ Ein _lateinisches Quadrat_ ist ein Quadrat, in dem jeder Wert innerhalb seiner Z
 Ist das gegebene Array `arr` ein lateinisches Quadrat der Seitenlängen `length`?
 Hinweis: die Transformation ins Zweidimensionale ist wie in der Voraufgabe.
 */
-bool is_latin_square(uint16_t arr[], size_t length) {
-    return 0;
+bool is_latin_square(int *array, size_t n) {
+  if (n == 0) return false;
+  if (n == 1) return true;
+
+  // √n = Seitenlänge
+  size_t size = (size_t)sqrt((double)n);
+  if (size * size != n)
+    return false; // Kein echtes Quadrat
+
+  // Zeilen prüfen
+  for (size_t y = 0; y < size; y++) {
+    for (size_t x1 = 0; x1 < size; x1++) {
+      int val = array[y * size + x1];
+
+      if (val < 1 || val > (int)size * (int)size)
+        return false;
+
+      // Doppelte in Zeile?
+      for (size_t x2 = x1 + 1; x2 < size; x2++) {
+        if (val == array[y * size + x2])
+          return false;
+      }
+    }
+  }
+
+  // Spalten prüfen
+  for (size_t x = 0; x < size; x++) {
+    for (size_t y1 = 0; y1 < size; y1++) {
+      int val = array[y1 * size + x];
+      for (size_t y2 = y1 + 1; y2 < size; y2++) {
+        if (val == array[y2 * size + x])
+          return false;
+      }
+    }
+  }
+
+  return true;
 }
 
 /*
@@ -75,5 +124,51 @@ Ist das gegebene Array `arr` ein magisches Quadrat der Seitenlängen `length`?
 Hinweis: die Transformation ins Zweidimensionale ist wie in der Voraufgabe.
 */
 bool is_magic_square(uint16_t arr[], size_t length) {
-    return 0;
+  // Berechne die erwartete Summe aus der ersten Zeile
+  uint32_t expected_sum = 0;
+  for (size_t j = 0; j < length; j++) {
+    expected_sum += arr[j];
+  }
+
+  // Überprüfe alle Zeilen
+  for (size_t i = 0; i < length; i++) {
+    uint32_t row_sum = 0;
+    for (size_t j = 0; j < length; j++) {
+      row_sum += arr[i * length + j];
+    }
+    if (row_sum != expected_sum) {
+      return false;
+    }
+  }
+
+  // Überprüfe alle Spalten
+  for (size_t j = 0; j < length; j++) {
+    uint32_t col_sum = 0;
+    for (size_t i = 0; i < length; i++) {
+      col_sum += arr[i * length + j];
+    }
+    if (col_sum != expected_sum) {
+      return false;
+    }
+  }
+
+  // Überprüfe die Hauptdiagonale (von oben links nach unten rechts)
+  uint32_t diag1_sum = 0;
+  for (size_t i = 0; i < length; i++) {
+    diag1_sum += arr[i * length + i];
+  }
+  if (diag1_sum != expected_sum) {
+    return false;
+  }
+
+  // Überprüfe die Nebendiagonale (von oben rechts nach unten links)
+  uint32_t diag2_sum = 0;
+  for (size_t i = 0; i < length; i++) {
+    diag2_sum += arr[i * length + (length - 1 - i)];
+  }
+  if (diag2_sum != expected_sum) {
+    return false;
+  }
+
+  return true;
 }

@@ -13,7 +13,7 @@ endif
 
 .PHONY: all run_ex build_ex run_pr build_pr nob clean
 
-all: run_ex #run_pr
+all: run_ex run_pr
 
 # Build nob tool first, then use it to build and run
 run_ex: build_ex
@@ -23,11 +23,11 @@ run_ex: build_ex
 build_ex: nob
 		cd $(WORKDIR) && ./nob -bex
 
-#run_pr: build_pr
-#		cd $(WORKDIR) && ./nob -rpr
+run_pr: build_pr
+		cd $(WORKDIR) && ./nob -rpr
 
-#build_pr: nob
-#		cd $(WORKDIR) && ./nob -bpr
+build_pr: nob
+		cd $(WORKDIR) && ./nob -bpr
 
 # Build the nob tool
 nob: $(WORKDIR)/nob.c
