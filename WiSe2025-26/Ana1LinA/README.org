@@ -15,6 +15,9 @@ author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
   - [[#volständige-induktion][Volständige Induktion]]
 - [[#2025-10-27][2025-10-27]]
   - [[#abbildungen][Abbildungen]]
+- [[#2025-10-28][2025-10-28]]
+  - [[#abbildungen-1][Abbildungen]]
+  - [[#elementare-funktionen-i][Elementare Funktionen I]]
 
 * 2025-10-15
 
@@ -35,3 +38,9 @@ author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
 * 2025-10-27
 
 ** Abbildungen
+
+* 2025-10-28
+
+** Abbildungen
+
+** Elementare Funktionen I
