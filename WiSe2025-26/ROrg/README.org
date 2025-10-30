@@ -1,0 +1,27 @@
+#+title: Rechnerorganisation
+#+author: mcpeapsUnterstrichHD<mcpeaps_HD@outlook.com>
+#+description:https://mcpeapsunterstrichhd.dev/linkhub
+#+startup: showeverything
+#+options: toc:2
+
+* Table of Contents :toc:
+- [[#2025-10-27][2025-10-27]]
+  - [[#organisatorisches][Organisatorisches]]
+  - [[#einführung][Einführung]]
+
+* 2025-10-27
+
+** Organisatorisches
+
+E-mail: [[mailto:rorg@msc.tu-berlin.de][rorg@msc.tu-berlin.de]]
+Web: [[https://tu.berlin/msc][tu.berlin/msc]]
+
+** Einführung
+
+*** Historie
+
+*** Klassen
+
+*** Komponenten
+
+*** Funktionsweise
